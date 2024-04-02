@@ -17,7 +17,7 @@ def get_paths(csv_path, source_path):
         with os.scandir(subject_path) as entries:
             file_name = next(entries).name
         fmri_path = os.path.join(subject_path, file_name)
-        print(fmri_path)
+        #print(fmri_path)
         filepaths.append(fmri_path)
     return filepaths #, binary_class
 
