@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from nilearn import image
 from sklearn.model_selection import cross_val_score, cross_val_predict
-from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from skimage.transform import resize
@@ -46,26 +46,26 @@ print("Class 0:", label_encoder.classes_[0])
 print("Class 1:", label_encoder.classes_[1])
 print("Class 2:", label_encoder.classes_[2])
 
-# Reshape data for SVM
+# Reshape data for Decision Tree
 X_flat = X.reshape(X.shape[0], -1)
 
 # Oversampling using RandomOverSampler
 oversampler = RandomOverSampler()
 X_resampled, y_resampled = oversampler.fit_resample(X_flat, y)
 
-# Initialize SVM classifier
-svm = SVC(kernel='linear', C=1.0)
+# Initialize Decision Tree classifier
+decision_tree = DecisionTreeClassifier()
 
 # Perform k-fold cross-validation on the oversampled data
-scores = cross_val_score(svm, X_resampled, y_resampled, cv=5)
+scores = cross_val_score(decision_tree, X_resampled, y_resampled, cv=5)
 print("\nCross-validation scores:", scores)
 print("Mean cross-validation score:", scores.mean())
 
-# Train SVM classifier on the entire oversampled dataset
-svm.fit(X_resampled, y_resampled)
+# Train Decision Tree classifier on the entire oversampled dataset
+decision_tree.fit(X_resampled, y_resampled)
 
 # Predict using cross-validation
-y_pred = cross_val_predict(svm, X_resampled, y_resampled, cv=5)
+y_pred = cross_val_predict(decision_tree, X_resampled, y_resampled, cv=5)
 
 # Print classification report and confusion matrix
 print(classification_report(y_resampled, y_pred, zero_division=1))
