@@ -1,58 +1,71 @@
 import os
-import cv2
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn import svm
+import pandas as pd
+from nilearn import image
+from sklearn.model_selection import cross_val_score, StratifiedKFold, cross_val_predict
+from sklearn.svm import SVC
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.preprocessing import LabelEncoder
+from skimage.transform import resize
+from get_data import get_paths
 
-def preprocess_png_data(png_dir):
-    X = []
-    y = []
-    for root, dirs, files in os.walk(png_dir):
-        for file in files:
-            if file.endswith(".png"):
-                # Load PNG image
-                img_path = os.path.join(root, file)
-                img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
-                
-                # Resize image to a fixed size
-                img = cv2.resize(img, (64, 64))  # Example resizing to 64x64 pixels
-                
-                # Perform any additional preprocessing steps here
-                
-                # Append preprocessed image to X
-                X.append(img)
-                
-                # Extract label from filename or directory name if applicable
-                # For example, if your filenames contain label information
-                # you can extract it like this:
-                # label = file.split("_")[0]
-                # y.append(label)
-                
-    # Convert X to numpy array
-    X = np.array(X)
-    
-    # Convert y to numpy array if applicable
-    # y = np.array(y)
-    
-    return X, y
+# Load the CSV data
+data = pd.read_csv("ADNI1_Baseline_3T_3_20_2024.csv")
 
-def train_classifier(X, y):
-    # Step 4: Split data into train and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
-    
-    # Step 5: Define and train your classifier
-    classifier = svm.SVC()
-    classifier.fit(X_train, y_train)
+# Extract relevant columns
+labels = data['Group']
 
-    # Step 6: Evaluate the classifier
-    accuracy = classifier.score(X_test, y_test)
-    print("Accuracy:", accuracy)
+# Paths to NIfTI files using your function
+data_dir = "ADNI_data"
+image_paths = get_paths("ADNI1_Baseline_3T_3_20_2024.csv", data_dir)
 
-if __name__ == '__main__':
-    png_dir = "png"
-    
-    # Step 1: Preprocess PNG data
-    X, y = preprocess_png_data(png_dir)
-    
-    # Step 2: Train classifier
-    train_classifier(X, y)
+# Load NIfTI images and resize them to a fixed shape
+fixed_shape = (64, 64, 64)  # Example shape, adjust as needed
+images = []
+for path in image_paths:
+    try:
+        if os.path.exists(path):
+            img = image.load_img(path)
+            img_resized = resize(img.get_fdata(), fixed_shape, anti_aliasing=True)
+            images.append(img_resized)
+    except Exception as e:
+        print(f"Error loading image {path}: {e}")
+
+# Convert images to arrays
+X = np.array(images)
+
+images_per_group = labels.value_counts()
+print("Number of images per group:")
+print(images_per_group)
+
+# Perform label encoding for the labels (convert labels to integers)
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(labels)
+print("Class 0:", label_encoder.classes_[0])
+print("Class 1:", label_encoder.classes_[1])
+print("Class 2:", label_encoder.classes_[2])
+
+# Reshape data for SVM
+X_flat = X.reshape(X.shape[0], -1)
+
+# Initialize SVM classifier
+svm = SVC(kernel='linear', C=1.0)
+
+# Initialize StratifiedKFold object
+skf = StratifiedKFold(n_splits=3)
+
+# Perform stratified k-fold cross-validation
+scores = cross_val_score(svm, X_flat, y, cv=skf)
+
+print("\nCross-validation scores:", scores)
+print("Mean cross-validation score:", scores.mean())
+
+# Train SVM classifier on the entire dataset
+svm.fit(X_flat, y)
+
+y_pred = cross_val_predict(svm, X_flat, y, cv=skf)
+
+# Print classification report and confusion matrix
+print(classification_report(y, y_pred, zero_division=1))
+print("\nConfusion matrix: ")
+print(confusion_matrix(y, y_pred))

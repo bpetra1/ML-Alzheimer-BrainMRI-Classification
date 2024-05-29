@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: zavrsni_rad.aux
+The style file: fer_IEEEtran_HR.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 150 items from 100.
+Database file #1: literatura.bib
+You're missing a field name---line 195 of file literatura.bib
+ :  doi = {10.1101/573006},
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in Schaper573006
+You've used 9 entries,
+            4225 wiz_defined-function locations,
+            912 strings with 10215 characters,
+and the built_in function-call counts, 7083 in all, are:
+= -- 612
+> -- 171
+< -- 42
++ -- 92
+- -- 35
+* -- 334
+:= -- 1138
+add.period$ -- 27
+call.type$ -- 9
+change.case$ -- 9
+chr.to.int$ -- 75
+cite$ -- 10
+duplicate$ -- 507
+empty$ -- 513
+format.name$ -- 41
+if$ -- 1658
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 89
+newline$ -- 80
+num.names$ -- 9
+pop$ -- 188
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 576
+stack$ -- 0
+substring$ -- 231
+swap$ -- 420
+text.length$ -- 17
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 9
+warning$ -- 1
+while$ -- 21
+width$ -- 10
+write$ -- 149
+(There was 1 error message)
