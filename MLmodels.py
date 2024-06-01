@@ -5,13 +5,14 @@ from nilearn import image
 from sklearn.model_selection import cross_val_score, cross_val_predict
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from skimage.transform import resize
 from get_data import get_paths
 from imblearn.over_sampling import RandomOverSampler
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load the CSV data
 data = pd.read_csv("ADNI1_Baseline_3T_3_20_2024.csv")
@@ -60,6 +61,7 @@ class ModelTrainer:
     def __init__(self, model, model_name):
         self.model = model
         self.model_name = model_name
+        self.y_pred = None
 
     def evaluate_model(self, X, y):
         print(f"\nEvaluating {self.model_name}...")
@@ -70,32 +72,44 @@ class ModelTrainer:
 
     def train_and_predict(self, X, y):
         self.model.fit(X, y)
-        y_pred = cross_val_predict(self.model, X, y, cv=5)
+        self.y_pred = cross_val_predict(self.model, X, y, cv=5)
         print(f"\n{self.model_name} classification report:")
-        print(classification_report(y, y_pred, zero_division=1))
+        print(classification_report(y, self.y_pred, zero_division=1))
         print(f"\n{self.model_name} confusion matrix: ")
-        print(confusion_matrix(y, y_pred))
+        print(confusion_matrix(y, self.y_pred))
+        return self.y_pred
 
 # Train and evaluate Decision Tree
 decision_tree = DecisionTreeClassifier()
 dt_trainer = ModelTrainer(decision_tree, "Decision Tree")
 dt_trainer.evaluate_model(X_resampled, y_resampled)
-dt_trainer.train_and_predict(X_resampled, y_resampled)
+y_pred_dt = dt_trainer.train_and_predict(X_resampled, y_resampled)
 
 # Train and evaluate Random Forest
 random_forest = RandomForestClassifier(n_estimators=100, random_state=42)
 rf_trainer = ModelTrainer(random_forest, "Random Forest")
 rf_trainer.evaluate_model(X_resampled, y_resampled)
-rf_trainer.train_and_predict(X_resampled, y_resampled)
-
-# Train and evaluate K-Nearest Neighbors
-#knn = KNeighborsClassifier(n_neighbors=5)
-#knn_trainer = ModelTrainer(knn, "K-Nearest Neighbors")
-#knn_trainer.evaluate_model(X_resampled, y_resampled)
-#knn_trainer.train_and_predict(X_resampled, y_resampled)
+y_pred_rf = rf_trainer.train_and_predict(X_resampled, y_resampled)
 
 # Train and evaluate SVM
 svm = SVC(kernel='linear', random_state=42)
 svm_trainer = ModelTrainer(svm, "Support Vector Machine")
 svm_trainer.evaluate_model(X_resampled, y_resampled)
-svm_trainer.train_and_predict(X_resampled, y_resampled)
+y_pred_svm = svm_trainer.train_and_predict(X_resampled, y_resampled)
+
+# Function to plot confusion matrix
+def plot_confusion_matrix(y_true, y_pred, model_name):
+    conf_matrix = confusion_matrix(y_true, y_pred)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", 
+                xticklabels=['AD', 'CN', 'MCI'], yticklabels=['AD', 'CN', 'MCI'])
+    plt.title(f'Confusion Matrix - {model_name}')
+    plt.xlabel('Predicted')
+    plt.ylabel('True')
+    plt.savefig(f'confusion_matrix_{model_name.lower().replace(" ", "_")}.png')
+    plt.show()
+
+# Plot confusion matrices for each model
+plot_confusion_matrix(y_resampled, y_pred_dt, "Decision Tree")
+plot_confusion_matrix(y_resampled, y_pred_rf, "Random Forest")
+plot_confusion_matrix(y_resampled, y_pred_svm, "Support Vector Machine")

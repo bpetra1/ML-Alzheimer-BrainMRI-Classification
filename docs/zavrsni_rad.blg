@@ -15,45 +15,49 @@ You're missing a field name---line 195 of file literatura.bib
  :                         ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in Schaper573006
-You've used 9 entries,
+Warning--missing publisher in somvanshi2016
+Warning--empty journal in mahesh2019
+Warning--empty journal in segal2004machine
+Warning--empty journal in Mathew2023
+You've used 34 entries,
             4225 wiz_defined-function locations,
-            912 strings with 10215 characters,
-and the built_in function-call counts, 7083 in all, are:
-= -- 612
-> -- 171
-< -- 42
-+ -- 92
-- -- 35
-* -- 334
-:= -- 1138
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 9
-chr.to.int$ -- 75
-cite$ -- 10
-duplicate$ -- 507
-empty$ -- 513
-format.name$ -- 41
-if$ -- 1658
+            1073 strings with 15118 characters,
+and the built_in function-call counts, 22696 in all, are:
+= -- 1923
+> -- 471
+< -- 134
++ -- 254
+- -- 91
+* -- 1048
+:= -- 3737
+add.period$ -- 101
+call.type$ -- 34
+change.case$ -- 41
+chr.to.int$ -- 267
+cite$ -- 39
+duplicate$ -- 1636
+empty$ -- 1788
+format.name$ -- 108
+if$ -- 5311
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 89
-newline$ -- 80
-num.names$ -- 9
-pop$ -- 188
+int.to.str$ -- 34
+missing$ -- 302
+newline$ -- 203
+num.names$ -- 33
+pop$ -- 676
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 576
+skip$ -- 1819
 stack$ -- 0
-substring$ -- 231
-swap$ -- 420
-text.length$ -- 17
+substring$ -- 725
+swap$ -- 1281
+text.length$ -- 45
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 9
-warning$ -- 1
-while$ -- 21
-width$ -- 10
-write$ -- 149
+type$ -- 34
+warning$ -- 5
+while$ -- 77
+width$ -- 36
+write$ -- 442
 (There was 1 error message)
