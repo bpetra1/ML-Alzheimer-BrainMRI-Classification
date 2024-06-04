@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.3)  1 JUN 2024 15:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.3)  4 JUN 2024 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -934,8 +934,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.127 
-       [3
+l.128 f
+       MRI detektira promjene ovisne o razini kisika u krvi (BOLD, Blood-Oxy...
+[3
 
 ]
 <Figures/fMRI.png, id=311, 190.91325pt x 116.23425pt>
@@ -1263,7 +1264,7 @@ zavrsni_rad.bbl
  ***********
 
 Package rerunfilecheck Info: File `zavrsni_rad.out' has not changed.
-(rerunfilecheck)             Checksum: 13B6DC9B02F0666246FFE50A6CF6B0F4;7790.
+(rerunfilecheck)             Checksum: CF22A498D46834070F9A9C3E9244B5F9;7756.
  ) 
 Here is how much of TeX's memory you used:
  20462 strings out of 474267
@@ -1282,7 +1283,7 @@ live/2023/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb><c:/t
 exlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/202
 3/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb><c:/texlive/2023/texmf-di
 st/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on zavrsni_rad.pdf (43 pages, 1908472 bytes).
+Output written on zavrsni_rad.pdf (43 pages, 1908496 bytes).
 PDF statistics:
  898 PDF objects out of 1000 (max. 8388607)
  784 compressed objects within 8 object streams

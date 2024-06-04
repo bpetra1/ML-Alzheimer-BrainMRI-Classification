@@ -3,10 +3,10 @@
 \babel@toc {croatian}{}\relax 
 \contentsline {chapter}{\numberline {1.}Uvod}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2.}Glavni dio}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1.}Magnetna rezonancija (MRI)}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.1.}Magnetska rezonancija}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1.}Strukturni MRI (sMRI)}{3}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2.}Funkcionalni MRI (fMRI)}{4}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3.}Difuzijski MRI (dMRI)}{5}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.3.}Difuzijski MRI (dMRI)}{4}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2.}Podaci i metode}{6}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1.}ADNI baza podataka}{6}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2.}Analiza korištenih podataka}{7}{subsection.2.2.2}%
