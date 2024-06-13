@@ -6,6 +6,7 @@
 \usepackage{blindtext}
 \usepackage{listings}
 \usepackage{color, colortbl}
+\usepackage{tabularx}
 
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -72,7 +73,7 @@
 
 \begin{zahvale}
   % Ovdje upišite zahvale / Write in the acknowledgment
-  Hvala obitelji za podršku kroz rad.
+  Hvala mentorici i obitelji za podršku kroz rad.
 \end{zahvale}
 
 
@@ -96,20 +97,19 @@ MRI (Magnetic Resonance Imaging), posebno strukturni MRI, je neinvazivna tehnika
 \\
 Strojno učenje pruža moćne alate za analizu velikih skupova podataka i može značajno unaprijediti sposobnost dijagnoze složenih bolesti poput AD-a. Algoritmi strojnog učenja mogu analizirati obrasce u MRI slikama i prepoznati suptilne promjene koje možda nisu odmah vidljive stručnjacima, čime se povećava točnost i učinkovitost dijagnoze.
 \\
-Uz pomoć strukturnih MRI slika iz baze podataka Alzheimer’s Disease Neuroimaging Initiative (ADNI), u ovom radu primijenit ćemo dvije metode strojnog učenja, Decision Tree (DT) i Support Vector Machine (SVM), kako bismo razvili, testirali i usporedili modele sposobne za klasifikaciju pojedinaca u tri kategorije: zdrave osobe (CN), osobe s blagim kognitivnim oštećenjem (MCI) i osobe s Alzheimerovom bolešću (AD).
+Uz pomoć strukturnih MRI slika iz baze podataka Alzheimer’s Disease Neuroimaging Initiative (ADNI), u ovom radu primijenit ćemo dvije metode strojnog učenja, Stablo odluke (DT) i Support Vector Machine (SVM), kako bismo razvili, testirali i usporedili modele sposobne za klasifikaciju pojedinaca u tri kategorije: zdrave osobe (CN), osobe s blagim kognitivnim oštećenjem (MCI) i osobe s Alzheimerovom bolešću (AD).
 
 
 %-------------------------------------------------------------------------------
-\chapter{Glavni dio}
 \label{pog:glavni_dio}
 
-\section{Magnetska rezonancija}
+\chapter{Magnetska rezonancija}
 
 Magnetska rezonancija (MRI) je neinvazivna tehnika snimanja koja koristi magnetska polja i radiovalove za stvaranje detaljnih slika unutarnjih struktura tijela. Konvencionalna MRI se široko koristi za radiološku dijagnozu i stvara prostorne mape svojstava mobilnih vodikovih jezgri (protona) koje se uglavnom nalaze u molekulama vode. Kontrast unutar slika proizlazi iz varijacija u gustoći vode unutar tkiva i načinu na koji voda reagira s makromolekulama \cite{Gore2003}. Postoje tri glavne vrste MRI-a: strukturni MRI (sMRI), funkcionalni MRI (fMRI) i difuzijski MRI (dMRI).
 
 
-\subsection{Strukturni MRI (sMRI)}
-Strukturni MRI je ključan za diferencijalnu dijagnozu Alzheimerove bolesti zbog svoje sposobnosti vizualizacije specifičnih obrazaca atrofije u mozgu. T1-mjerene slike, koje se često koriste u strukturnom MRI-u, imaju visoku kontrastnu rezoluciju između sive i bijele tvari, što omogućuje precizno razlikovanje ovih tkiva i identifikaciju atrofičnih promjena povezanih s AD-om \cite{Gonuguntla2022}. Siva tvar sadrži većinu neuronskih tijela, dok bijela tvar sadrži mijelinizirane aksonske puteve koji povezuju različite dijelove sive tvari. T1-mjerene slike prikazuju masno tkivo i mijelin kao svijetle, dok tekućine poput cerebrospinalne tekućine izgledaju tamno \ref{fig:sMRI_T1}.
+\section{Strukturni MRI (sMRI)}
+Strukturni MRI je ključan za diferencijalnu dijagnozu Alzheimerove bolesti zbog svoje sposobnosti vizualizacije specifičnih obrazaca atrofije u mozgu. T1-mjerene slike, koje se često koriste u strukturnom MRI-u, imaju visoku kontrastnu rezoluciju između sive i bijele tvari, što omogućuje precizno razlikovanje ovih tkiva i identifikaciju atrofičnih promjena povezanih s AD-om \cite{Gonuguntla2022}. Siva tvar sadrži većinu neuronskih tijela, dok bijela tvar sadrži mijelinizirane aksonske puteve koji povezuju različite dijelove sive tvari. T1-mjerene slike prikazuju masno tkivo i mijelin kao svijetle, dok tekućine poput cerebrospinalne tekućine izgledaju tamno (Slika \ref{fig:sMRI_T1}).
 
 \begin{figure}[h]
 	\centering
@@ -121,9 +121,9 @@ Strukturni MRI je ključan za diferencijalnu dijagnozu Alzheimerove bolesti zbog
  U ovom radu koristimo strukturne MRI slike iz ADNI baze podataka kako bismo razvili, testirali i usporedili modele strojnog učenja za klasifikaciju Alzheimerove bolesti. Korištenje strukturnih MRI podataka omogućuje precizno identificiranje regija mozga koje su zahvaćene AD-om, što je ključno za razumijevanje progresije bolesti i razvoj učinkovitih metoda za njezinu dijagnozu i praćenje \cite{Gonuguntla2022}.
 
 
-\subsection{Funkcionalni MRI (fMRI)}
+\section{Funkcionalni MRI (fMRI)}
 
-Funkcionalni MRI (fMRI) koristi se za detekciju malih promjena u signalima koji se koriste za proizvodnju MR slika koje su povezane s neuronskom aktivnošću u mozgu \ref{fig:fMRI}. 
+Funkcionalni MRI (fMRI) koristi se za detekciju malih promjena u signalima koji se koriste za proizvodnju MR slika koje su povezane s neuronskom aktivnošću u mozgu (Slika \ref{fig:fMRI}). 
 
 fMRI detektira promjene ovisne o razini kisika u krvi (BOLD, Blood-Oxygen-Level Dependent) koje se javljaju kada se promjene u neuronskoj aktivnosti dogode nakon promjene stanja mozga, poput stimulusa ili zadatka. Ova tehnika je sigurna, neinvazivna i ponovljiva kod odraslih i djece, te ima široke potencijalne primjene u osnovnoj i kliničkoj neuroznanosti \cite{Gore2003}. Na slici \ref{fig:fMRI_BOLD} prikazana je promjena BOLD signala u odnosu na neuronsku aktivnost, ilustrirajući kako fMRI detektira metaboličke promjene povezane s neuronskom aktivnošću.
 
@@ -143,7 +143,7 @@ fMRI detektira promjene ovisne o razini kisika u krvi (BOLD, Blood-Oxygen-Level 
 \end{figure}
 
 
-\subsection{Difuzijski MRI (dMRI)}
+\section{Difuzijski MRI (dMRI)}
 Difuzijski MRI (dMRI) koristi se za mjerenje difuzije molekula vode u tkivima, što može pružiti informacije o mikrostrukturi mozga. dMRI tehnika može otkriti mikroskopske promjene u tkivima u ranim fazama AD-a, poput gubitka mijelina, oštećenja aksona i gubitka neurona \cite{Promteangtrong2015}.
 
 Jedna od najčešće korištenih metoda u dMRI je difuzijska tenzorska slika (DTI) \ref{fig:dMRI}, koja omogućuje kvantifikaciju smjera i veličine difuzije vode, pružajući detaljne informacije o integritetu bijele tvari u mozgu. Cilj većine dMRI studija je usporediti DTI metrike između dviju ili više populacija ispitanika ili istražiti korelacije između DTI metrika i relevantnih kognitivnih mjera \cite{mueller2015diffusion}.
@@ -155,99 +155,26 @@ Jedna od najčešće korištenih metoda u dMRI je difuzijska tenzorska slika (DT
 	\label{fig:dMRI}
 \end{figure}
 
-\section{Podaci i metode}
-\subsection{ADNI baza podataka}
-Alzheimer's Disease Neuroimaging Initiative (ADNI) je studija pokrenuta 2004. godine s ciljem razvoja kliničkih, slikovnih, genetičkih i biokemijskih biomarkera za rano otkrivanje i praćenje Alzheimerove bolesti. ADNI uključuje sudionike u dobi od 55 do 90 godina koji su regrutirani na više od 50 lokacija u Sjedinjenim Američkim Državama i Kanadi \cite{adni_about}. 
 
-ADNI baza podataka prikuplja širok spektar podataka koji uključuju slike mozga (MRI i PET), genetske podatke, kognitivne testove, kao i biomarkere iz cerebrospinalne tekućine i krvi \cite{adni_about}. Ovi podaci omogućuju istraživačima proučavanje odnosa između kliničkih, kognitivnih, slikovnih, genetičkih i biokemijskih karakteristika AD-a tijekom evolucije bolesti.
+\chapter{Strojno učenje (ML)}
+Strojno učenje (ML) je grana umjetne inteligencije koja se temelji na razvijanju algoritama koji mogu učiti iz podataka i donositi odluke na temelju naučenih obrazaca \cite{ml_book}. Strojno učenje se dijeli na tri vrste: nadzirano učenje, nenadzirano učenje i učenje pojačanjem.
 
-Sudionici u ADNI studiji podijeljeni su u nekoliko skupina:
+\section{Vrste strojnog učenja}
 
-\begin{itemize}
-	\item \textbf{Normalni kontrolni sudionici (CN)}: Osobe bez znakova depresije, blagih kognitivnih oštećenja ili demencije.
-	\item\textbf{Sudionici s blagim kognitivnim oštećenjem (MCI)}: Osobe koje pokazuju blage kognitivne deficite, ali ne zadovoljavaju kriterije za dijagnozu demencije.
-	\item \textbf{Sudionici s Alzheimerovom bolešću (AD)}: Osobe s dijagnozom blage Alzheimerove bolesti.
-\end{itemize}
-
-Glavni ciljevi ADNI-a uključuju \cite{adni_about}:
-\begin{itemize}
-	\item Praćenje longitudinalnih promjena u kogniciji i biomarkerima.
-	\item Predikcija kognitivnog pada.
-	\item Validacija biomarkera.
-	\item Optimizacija dizajna kliničkih ispitivanja.
-	\item Otkriće novih genetskih i proteinskih markera povezanih s AD-om.
-\end{itemize}
-
-Podaci prikupljeni iz ADNI baze podataka dostupni su istraživačima putem LONI Image and Data Archive (IDA) \cite{usc_loni}, gdje mogu pristupiti slikama, kliničkim, genomskim i biomarkernim podacima za znanstvena istraživanja, podučavanje ili planiranje kliničkih studija.
-
-\subsection{Analiza korištenih podataka}
-Za potrebe istraživanja koristila sam podatke iz Alzheimer's Disease Neuroimaging Initiative (ADNI) baze podataka. Konkretno, radila sam s visokokvalitetnim strukturnim MRI pretprocesiranim slikama snimljenim na 3T uređaju, koje su preuzete u .NIfTI formatu \ref{fig:nifti}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Figures/primjer_slike.png}
-	\caption{sMRI slika NIfTi formata prikazana u BrainVieweru\cite{umich_brainviewer}}
-	\label{fig:nifti}
-\end{figure}
- 
-
-Skup podataka korišten u ovom istraživanju sastoji se od informacija o sudionicima iz različitih dijagnostičkih grupa: AD (Alzheimerova bolest), CN (kontrolna skupina) i MCI (blagi kognitivni poremećaj). Svaki zapis sadrži podatke o \textbf{identifikacijskom broju slike, subjektu, grupi, spolu, dobi, posjeti, modalitetu i opisu MRI snimka}.
-
-	
-Ukupan broj sudionika u istraživanju je \textbf{193}. Raspodijelu sudionika u tri dijagnostičke grupe možemo vidjeti u Tablici \ref{tab:brojsudionikapogrupi}.
-
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		\textbf{Grupa} & \textbf{Broj sudionika} \\
-		\hline
-		AD & 41 \\
-		CN & 60 \\
-		MCI & 92 \\
-		\hline
-	\end{tabular}
-	\caption{Broj sudionika po grupi}
-	\label{tab:brojsudionikapogrupi}
-\end{table}
-
-Sudionici su podjednako raspodijeljeni po spolu: muškaraca (M) je 91, dok je žena (F) 102. Ova distribucija prikazana je na slici \ref{fig:spol}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\textwidth]{Figures/pie_chart_spola.png}
-	\caption{Raspodjela sudionika po spolu}
-	\label{fig:spol}
-\end{figure}
-
-Dobnu raspodjelu sudionika možemo vidjeti na slici \ref{fig:dob}.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Figures/histogram_dobi.png}
-	\caption{Raspodjela sudionika po dobi}
-	\label{fig:dob}
-\end{figure}
-
-
-\section{Strojno učenje (ML)}
-Strojno učenje (ML) je grana umjetne inteligencije koja se temelji na razvijanju algoritama koji mogu učiti iz podataka i donositi odluke na temelju naučenih obrazaca \cite{ml_book}. Strojno učenje se široko dijeli na tri vrste: nadzirano učenje, nenadzirano učenje i učenje pojačanjem.
-
-\subsection{Vrste Strojnog Učenja}
-
-\subsubsection{Nadzirano Učenje}
+\subsection{Nadzirano učenje}
 
 Nadzirano učenje uključuje treniranje modela na označenom skupu podataka, što znači da je svaki primjer učenja uparen s izlaznom oznakom. Cilj je da model nauči mapirati ulaze na ispravan izlaz.
 
 Uobičajeni algoritmi uključuju:
 
 \begin{itemize}
-	\item \textbf{Decision Trees (stabla odlučivanja)}: Algoritmi koji koriste strukturu stabla za donošenje odluka i predikciju rezultata na temelju ulaznih podataka \cite{somvanshi2016}.
+	\item \textbf{Stablo odluke}: Algoritmi koji koriste strukturu stabla za donošenje odluka i predikciju rezultata na temelju ulaznih podataka \cite{somvanshi2016}.
 	\item \textbf{Support Vector Machines (SVM)}: Algoritmi koji analiziraju podatke za klasifikaciju i regresiju, koristeći hiperplane za razdvajanje različitih klasa \cite{somvanshi2016}.
 	\item \textbf{K najbližih susjeda (k-Nearest Neighbors)}: Algoritam koji klasificira podatke na temelju sličnosti s najbližim susjedima u skupu podataka \cite{mahesh2019}.
 	\item \textbf{Random Forest}: Ansambl algoritama koji koristi više stabala odlučivanja za poboljšanje točnosti i smanjenje pretreniranosti \cite{mahesh2019}.
 \end{itemize}
 
-\subsubsection{Nenadzirano Učenje}
+\subsection{Nenadzirano učenje}
 
 Nenadzirano učenje bavi se podacima koji nemaju označene odgovore. Sustav pokušava naučiti obrasce i strukture iz podataka.
 
@@ -258,26 +185,26 @@ Ključne metode uključuju:
 	\item \textbf{Analiza glavnih komponenata (PCA)}: Tehnika koja se koristi za smanjenje dimenzionalnosti podataka pretvaranjem u novi skup varijabli koje su nekorelirane i koje hvataju maksimalnu varijabilnost \cite{somvanshi2016}.
 \end{itemize}
 
-\subsubsection{Učenje Pojačanjem}
+\subsection{Učenje pojačanjem}
 
 Učenje pojačanjem odnosi se na učenje najboljih akcija koje treba poduzeti u nekom okruženju kako bi se maksimizirala kumulativna nagrada. Uključuje agenta koji interaktivno djeluje s okruženjem i uči postići cilj isprobavajući različite akcije i primajući povratne informacije u obliku nagrada ili kazni \cite{mahesh2019}.
 
-\subsection{Ključni Koncepti i Primjene}
+\subsection{Ključni koncepti i primjene}
 
 \begin{itemize}
-	\item \textbf{Odabir i Ekstrakcija Značajki}: Ključno u predprocesiranju podataka za modele strojnog učenja. Cilj je odabrati relevantne značajke koje poboljšavaju performanse modela.
-	\item \textbf{Evaluacija Modela}: Metode poput unakrsne validacije koriste se za procjenu performansi modela strojnog učenja i sprječavanje overfittinga \cite{ibm_machine_learning}.
+	\item \textbf{Odabir i ekstrakcija značajki}: Ključno u predprocesiranju podataka za modele strojnog učenja. Cilj je odabrati relevantne značajke koje poboljšavaju performanse modela.
+	\item \textbf{Evaluacija modela}: Metode poput unakrsne validacije koriste se za procjenu performansi modela strojnog učenja i sprječavanje overfittinga \cite{ibm_machine_learning}.
 	\item \textbf{Primjene}: Strojno učenje koristi se u raznim aplikacijama kao što su prepoznavanje slika i govora, medicinska dijagnostika, financije (npr. kreditno bodovanje i algoritamsko trgovanje) i personalizirane preporuke \cite{ibm_machine_learning}.
 \end{itemize}
 
 
-\section{Decision Tree (DT)}
-Ovaj model strojnog učenja koristi različite značajke ekstrahirane iz MRI slika kako bi predvidio prisutnost ili odsutnost Alzheimerove bolesti. Stablo odlučivanja pruža intuitivan i vizualno razumljiv način predstavljanja odluka temeljenih na ovim značajkama, omogućujući jednostavno tumačenje i analizu klasifikacijskih pravila \cite{somvanshi2016}.
+\section{Stablo odluke}
+Stablo odluke (DT, Decision Tree) je model strojnog učenja koji koristi različite značajke ekstrahirane iz MRI slika kako bi predvidio prisutnost ili odsutnost Alzheimerove bolesti. DT pruža intuitivan i vizualno razumljiv način predstavljanja odluka temeljenih na ovim značajkama, omogućujući jednostavno tumačenje i analizu klasifikacijskih pravila \cite{somvanshi2016}.
 
-Stablo odlučivanja je tehnika temeljena na stablu u kojoj je svaki put koji započinje od korijena opisan nizom za razdvajanje podataka sve dok se ne postigne finalni ishod u listu čvora \cite{Charbuty_Abdulazeez_2021}. Ovo omogućuje modelu da jasno i precizno identificira različite kategorije na temelju danih podataka.
+Stablo odluke je tehnika temeljena na stablu u kojoj je svaki put koji započinje od korijena opisan nizom za razdvajanje podataka sve dok se ne postigne finalni ishod u listu čvora \cite{Charbuty_Abdulazeez_2021}. Ovo omogućuje modelu da jasno i precizno identificira različite kategorije na temelju danih podataka.
 
-\subsection{Primjer stabla odlučivanja}
-Na slici \ref{fig:decision_tree} prikazan je primjer stabla odlučivanja koje može biti korišteno za klasifikaciju na temelju različitih atributa. Svaki čvor u stablu testira određeni atribut kao što su "Temperatura", "Kiša" ili "Sunce", dok grane predstavljaju različite vrijednosti tih atributa koje vode do konačnih klasifikacija kao što su "Pulover", "Kišobran" ili "Majica".
+\subsection{Primjer stabla odluke}
+Na slici \ref{fig:decision_tree} prikazan je primjer stabla odluke koje može biti korišteno za klasifikaciju na temelju različitih atributa. Svaki čvor u stablu testira određeni atribut kao što su "Temperatura", "Kiša" ili "Sunce", dok grane predstavljaju različite vrijednosti tih atributa koje vode do konačnih klasifikacija kao što su "Pulover", "Kišobran" ili "Majica".
 
 \begin{figure}[h]
 	\centering
@@ -286,8 +213,8 @@ Na slici \ref{fig:decision_tree} prikazan je primjer stabla odlučivanja koje mo
 	\label{fig:decision_tree}
 \end{figure}
 
-\subsection{Algoritmi stabla odlučivanja}
-Postoji nekoliko algoritama za izgradnju stabala odlučivanja, a najpoznatiji među njima su ID3, C4.5 i CART.
+\subsection{Algoritmi stabla odluke}
+Postoji nekoliko algoritama za izgradnju stabala odluke, a najpoznatiji među njima su ID3, C4.5 i CART.
 
 \subsubsection{ID3 (Iterative Dichotomiser 3)}
 ID3 algoritam je vrlo jednostavan algoritam za izgradnju stabla odlučivanja koji je razvio Quinlan 1986. godine. Ovaj algoritam koristi kriterij informacijske dobiti za odabir atributa na svakom čvoru stabla, što maksimizira smanjenje entropije. Prednosti uključuju brzo građenje stabla i stvaranje razumljivih pravila, dok nedostaci uključuju osjetljivost na numeričke atribute i nedostatak rukovanja s nedostajućim vrijednostima \cite{singh2014}.
@@ -296,7 +223,7 @@ ID3 algoritam je vrlo jednostavan algoritam za izgradnju stabla odlučivanja koj
 C4.5 je evolucija ID3 algoritma, također razvijenog od strane Quinlana. Ovaj algoritam koristi omjer dobiti kao kriterij za odabir atributa i omogućuje rukovanje kontinuiranim i diskretnim atributima, kao i nedostajućim vrijednostima. C4.5 također koristi strategiju rezanja stabala kako bi se smanjila prekomjerna prilagodba \cite{singh2014}.
 
 \subsubsection{CART (Classification and Regression Trees)}
-CART, koji su razvili Breiman i suradnici, koristi binarno grananje i Towing kriterij za odabir podjela. Ovaj algoritam može generirati klasifikacijska i regresijska stabla te omogućuje rukovanje numeričkim i kategorialnim podacima. CART također koristi strategiju rezanja stabala za smanjenje složenosti stabla \cite{singh2014}.
+CART, koji su razvili Breiman i suradnici, koristi binarno grananje i Towing kriterij za odabir podjela. Ovaj algoritam može generirati klasifikacijska i regresijska stabla te omogućuje rukovanje numeričkim i kategoričkim podacima. CART također koristi strategiju rezanja stabala za smanjenje složenosti stabla \cite{singh2014}.
 
 
 \subsection{Prednosti i nedostaci}
@@ -304,7 +231,7 @@ Stabla odlučivanja nude nekoliko prednosti:
 \begin{itemize}
 	\item Jednostavna za razumijevanje i interpretaciju.
 	\item Zahtijevaju malo predobrade podataka.
-	\item Mogu rukovati numeričkim i kategorialnim podacima.
+	\item Mogu rukovati numeričkim i kategoričkim podacima.
 	\item Sposobna su za rukovanje nedostajućim vrijednostima.
 \end{itemize}
 
@@ -317,41 +244,46 @@ Međutim, imaju i neke nedostatke:
 
 
 
-\section{Random Forest}
-Random Forest je jedan od najmoćnijih i najpopularnijih algoritama strojnog učenja. Razvio ga je Leo Breiman 2001. godine kao ansambl metodu koja koristi mnoštvo stabala odlučivanja kako bi poboljšala točnost i stabilnost modela. Random Forest može se koristiti za klasifikaciju i regresiju, a poznat je po svojoj otpornosti na prekomjerno prilagođavanje.
+\section{Slučajna šuma}
+Slučajna šuma (RF, Random forest) je jedan od najmoćnijih i najpopularnijih algoritama strojnog učenja. Razvio ga je Leo Breiman 2001. godine kao ansambl metodu koja koristi mnoštvo stabala odlučivanja kako bi poboljšala točnost i stabilnost modela. Slučajna šuma može se koristiti za klasifikaciju i regresiju, a poznat je po svojoj otpornosti na prekomjerno prilagođavanje.
 
-Random Forest sastoji se od velikog broja individualnih stabala odlučivanja koja djeluju kao ansambl. Svako stablo u šumi daje klasifikaciju (za klasifikacijske probleme) ili predviđanje (za regresijske probleme), a glasanje ili prosjek tih rezultata određuje konačni ishod modela. Ključni koncepti Random Forest algoritma uključuju bootstrap uzorkovanje, slučajni odabir podskupa značajki za svaki čvor stabla, i agregaciju rezultata pomoću glasanja ili prosjeka \cite{geeksforgeeks2021}.
+Slučajna šuma sastoji se od velikog broja individualnih stabala odlučivanja koja djeluju kao ansambl. Svako stablo u šumi daje klasifikaciju (za klasifikacijske probleme) ili predviđanje (za regresijske probleme), a glasanje ili prosjek tih rezultata određuje konačni ishod modela. Ključni koncepti Random Forest algoritma uključuju bootstrap uzorkovanje, slučajni odabir podskupa značajki za svaki čvor stabla, i agregaciju rezultata pomoću glasanja ili prosjeka \cite{geeksforgeeks2021}.
 
-\subsection{Koraci algoritma Random Forest}
+\subsection{Koraci algoritma RF}
+Slika \ref{fig:random_forest} prikazuje postupak algoritma RF za klasifikaciju.
+\begin{itemize} 
+	\item Model Treniranje: više odluka stabala se trenira koristeći različite podskupove podataka za trening.
+	\item Model Testiranje: Svako stablo daje svoju predikciju, a konačna odluka se donosi većinskim glasanjem (bagging) tih predikcija.
+\end{itemize}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/random_forests.png}
-	\caption{Izgradnja Random Forest algoritma}
+	\caption{Izgradnja Random Forest algoritma \cite{geeksforgeeks2021}}
 	\label{fig:random_forest}
 \end{figure}
 
 \subsubsection{Bootstrap uzorkovanje}
 Svako stablo u Random Forest-u trenira se na drugačijem bootstrap uzorku podataka. To znači da se za svako stablo nasumično odabire podskup podataka s ponavljanjem iz originalnog skupa podataka, što rezultira različitim uzorcima za svako stablo. Ovaj pristup smanjuje varijancu modela i povećava njegovu otpornost na prekomjerno prilagođavanje \cite{segal2004machine}.
 
-\subsection{Slučajni odabir značajki}
+\subsubsection{Slučajni odabir značajki}
 Za svaki čvor u stablu odlučivanja, Random Forest nasumično odabire podskup značajki iz cijelog skupa značajki i koristi ih za određivanje najboljeg razdvajanja. Ovaj postupak dodatno smanjuje korelaciju među stablima u šumi i poboljšava ukupnu točnost modela \cite{segal2004machine}.
 
 \subsubsection{Agregacija rezultata}
 Nakon što se sva stabla u šumi treniraju, rezultati svake klasifikacije ili predikcije agregiraju se kako bi se dobio konačni rezultat. Za klasifikacijske probleme koristi se većinsko glasanje, dok se za regresijske probleme koristi prosjek svih predikcija \cite{sarica2017}.
 
-\subsubsection{Prednosti Random Forest algoritma}
-Random Forest ima nekoliko ključnih prednosti:
+\subsubsection{Prednosti RF algoritma}
+RF ima nekoliko ključnih prednosti:
 \begin{itemize}
 	\item Otpornost na prekomjerno prilagođavanje: Korištenje više stabala smanjuje rizik od prekomjernog prilagođavanja modela na trenirajući skup podataka.
 	\item Rad s velikim brojem značajki: Slučajni odabir podskupa značajki omogućuje modelu da učinkovito radi s velikim brojem značajki.
-	\item Stabilnost: Random Forest je stabilniji u prisutnosti šuma i outliera u podacima.
+	\item Stabilnost: RF je stabilniji u prisutnosti šuma i outliera u podacima.
 	\item Intrinzična selekcija značajki: Model prirodno pruža mjere važnosti značajki koje mogu pomoći u razumijevanju podataka i njihovom utjecaju na predikcije \cite{sarica2017}.
 \end{itemize}
 
 
-\section{Support Vector Machine (SVM)}
-Support Vector Machines, ili SVM, je algoritam strojnog učenja koji koristi koncept marginizacije kako bi klasificirao podatke. Osnovna ideja SVM-a je pronaći hiperravninu koja najbolje razdvaja podatke u različite klase. Ključni koncepti SVM-a uključuju odvajajuću hiperravninu, hiperravninu s maksimalnom marginom, mekanu marginu i kernel funkciju \cite{fletcher2009}.
+\section{Stroj potpornih vektora (SVM)}
+Stroj potpornih vektora je algoritam strojnog učenja koji koristi koncept marginizacije kako bi klasificirao podatke. Osnovna ideja SVM-a je pronaći hiperravninu koja najbolje razdvaja podatke u različite klase. Ključni koncepti SVM-a uključuju odvajajuću hiperravninu, hiperravninu s maksimalnom marginom, mekanu marginu i kernel funkciju \cite{fletcher2009}.
 
 \subsection{Odvajajuća hiperravnina}
 Odvajajuća hiperravnina je pravac ili ravnina koja razdvaja skup podataka u dvije klase \ref{fig:odv_hiper}. U dvodimenzionalnom prostoru, ovo je jednostavna linija, dok je u višedimenzionalnom prostoru to hiperravnina \cite{Noble2006}.
@@ -386,11 +318,98 @@ Kernel funkcija omogućuje SVM-u da rješava nelinearno odvojive podatke tako š
 \subsection{Primjene SVM-a}
 SVM algoritmi imaju širok raspon primjena, od prepoznavanja obrazaca i regresije do biomedicinskih klasifikacija poput automatske klasifikacije mikroarray ekspresijskih profila gena \cite{Noble2006}.
 
+\chapter{Podaci i metode}
+\section{ADNI baza podataka}
+Alzheimer's Disease Neuroimaging Initiative (ADNI) je studija pokrenuta 2004. godine s ciljem razvoja kliničkih, slikovnih, genetičkih i biokemijskih biomarkera za rano otkrivanje i praćenje Alzheimerove bolesti. ADNI uključuje sudionike u dobi od 55 do 90 godina koji su regrutirani na više od 50 lokacija u Sjedinjenim Američkim Državama i Kanadi \cite{adni_about}. 
+
+ADNI baza podataka prikuplja širok spektar podataka koji uključuju slike mozga (MRI i PET), genetske podatke, kognitivne testove, kao i biomarkere iz cerebrospinalne tekućine i krvi \cite{adni_about}. Ovi podaci omogućuju istraživačima proučavanje odnosa između kliničkih, kognitivnih, slikovnih, genetičkih i biokemijskih karakteristika AD-a tijekom evolucije bolesti.
+
+Sudionici u ADNI studiji podijeljeni su u nekoliko skupina:
+
+\begin{itemize}
+	\item \textbf{Normalni kontrolni sudionici (CN)}: Osobe bez znakova depresije, blagih kognitivnih oštećenja ili demencije.
+	\item\textbf{Sudionici s blagim kognitivnim oštećenjem (MCI)}: Osobe koje pokazuju blage kognitivne deficite, ali ne zadovoljavaju kriterije za dijagnozu demencije.
+	\item \textbf{Sudionici s Alzheimerovom bolešću (AD)}: Osobe s dijagnozom blage Alzheimerove bolesti.
+\end{itemize}
+
+Glavni ciljevi ADNI-a uključuju \cite{adni_about}:
+\begin{itemize}
+	\item Praćenje longitudinalnih promjena u kogniciji i biomarkerima.
+	\item Predikcija kognitivnog pada.
+	\item Validacija biomarkera.
+	\item Optimizacija dizajna kliničkih ispitivanja.
+	\item Otkriće novih genetskih i proteinskih markera povezanih s AD-om.
+\end{itemize}
+
+Podaci prikupljeni iz ADNI baze podataka dostupni su istraživačima putem LONI Image and Data Archive (IDA) \cite{usc_loni}, gdje mogu pristupiti slikama, kliničkim, genomskim i biomarkernim podacima za znanstvena istraživanja, podučavanje ili planiranje kliničkih studija.
+
+\section{Analiza korištenih podataka}
+Za potrebe istraživanja korišteni su podaci iz Alzheimer's Disease Neuroimaging Initiative (ADNI) baze podataka. Konkretno, korištene su visokokvalitetne strukturne MRI pretprocesirane slike snimljene na 3T uređaju, koje su preuzete u .NIfTI formatu \ref{fig:nifti}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/primjer_slike.png}
+	\caption{sMRI slika NIfTi formata prikazana u BrainVieweru\cite{umich_brainviewer}}
+	\label{fig:nifti}
+\end{figure}
+
+
+Skup podataka korišten u ovom istraživanju sastoji se od informacija o sudionicima iz različitih dijagnostičkih grupa: AD (Alzheimerova bolest), CN (kontrolna skupina) i MCI (blagi kognitivni poremećaj). Svaki zapis sadrži podatke o \textbf{identifikacijskom broju slike, subjektu, grupi, spolu, dobi, posjeti, modalitetu i opisu MRI snimka}.
+
+Ukupan broj sudionika u istraživanju je \textbf{148}. Raspodjelu sudionika u tri dijagnostičke grupe možemo vidjeti u Tablici \ref{tab:brojsudionikapogrupi}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Grupa} & \textbf{Broj sudionika} \\
+		\hline
+		AD & 33 \\
+		CN & 47 \\
+		MCI & 68 \\
+		\hline
+	\end{tabular}
+	\caption{Broj sudionika po grupi}
+	\label{tab:brojsudionikapogrupi}
+\end{table}
+
+Sudionici su raspodijeljeni po spolu kako slijedi: muškaraca (M) je 73, dok je žena (F) 75. Ova distribucija prikazana je u Tablici \ref{tab:raspodjelaspol}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Grupa} & \textbf{Muškarci} & \textbf{Žene} \\
+		\hline
+		AD & 11 & 22 \\
+		CN & 18 & 29 \\
+		MCI & 44 & 24 \\
+		\hline
+	\end{tabular}
+	\caption{Raspodjela sudionika po grupi i spolu}
+	\label{tab:raspodjelaspol}
+\end{table}
+
+Kako bismo se nosili s neravnotežom u klasama unutar skupa podataka, koristili smo tehniku \textbf{prekomjernog uzorkovanja }(oversampling). Oversampling tehnika umjetno generira dodatne uzorke za klase s manjim brojem podataka, čime se postiže bolja uravnoteženost dataset-a. To omogućuje modelima da bolje uče iz podataka i smanjuje pristranost prema većim klasama, poboljšavajući ukupnu učinkovitost klasifikacije. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Figures/pie_chart_spola.png}
+	\caption{Raspodjela sudionika po spolu}
+	\label{fig:spol}
+\end{figure}
+
+Dobnu raspodjelu sudionika možemo vidjeti na slici \ref{fig:dob}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/histogram_dobi.png}
+	\caption{Raspodjela sudionika po dobi}
+	\label{fig:dob}
+\end{figure}
 
 
 \section{Implementacija}
-
-U ovom poglavlju ćemo detaljno opisati implementaciju različitih modela strojnog učenja za klasifikaciju Alzheimerove bolesti koristeći strukturne MRI slike u NIfTI formatu. Implementirali smo tri modela: Decision Tree, Random Forest i Support Vector Machine. Podaci su dobiveni iz ADNI baze podataka i obuhvaćaju tri klase: AD (Alzheimerova bolest), MCI (blagi kognitivni poremećaj) i CN (kognitivno normalni). Koristit ćemo Python programski jezik i niz biblioteka koje podržavaju strojno učenje i obradu medicinskih slika.
+U ovom poglavlju ćemo detaljno opisati implementaciju različitih modela strojnog učenja za klasifikaciju Alzheimerove bolesti koristeći strukturne MRI slike u NIfTI formatu. Implementirali smo tri modela: Stablo odluke, Random Forest i Support Vector Machine. Podaci su dobiveni iz ADNI baze podataka i obuhvaćaju tri klase: AD (Alzheimerova bolest), MCI (blagi kognitivni poremećaj) i CN (kognitivno normalni). Koristit ćemo Python programski jezik i niz biblioteka koje podržavaju strojno učenje i obradu medicinskih slika.
 
 \subsection{Učitavanje i priprema podataka}
 Prvi korak je učitavanje biblioteka, podataka iz CSV datoteke i priprema NIfTI slika za analizu.
@@ -403,12 +422,10 @@ Prvi korak je učitavanje biblioteka, podataka iz CSV datoteke i priprema NIfTI 
 	from sklearn.model_selection import cross_val_score, cross_val_predict
 	from sklearn.tree import DecisionTreeClassifier
 	from sklearn.ensemble import RandomForestClassifier
-	from sklearn.neighbors import KNeighborsClassifier
 	from sklearn.svm import SVC
 	from sklearn.metrics import classification_report, confusion_matrix
 	from sklearn.preprocessing import LabelEncoder
 	from skimage.transform import resize
-	from get_data import get_paths
 	from imblearn.over_sampling import RandomOverSampler
 \end{lstlisting}
 
@@ -418,7 +435,7 @@ Prvi korak je učitavanje biblioteka, podataka iz CSV datoteke i priprema NIfTI 
 	\item \texttt{numpy}: Biblioteka za rad s numeričkim podacima.
 	\item \texttt{pandas}: Biblioteka za manipulaciju i analizu podataka u tabularnom obliku (.csv).
 	\item \texttt{nilearn}: Biblioteka za neuroznanstvene analize, posebno rad s NIfTI slikama.
-	\item \texttt{sklearn}: Biblioteka za strojno ucenje koja sadrzi alate za predprocesiranje, modeliranje i evaluaciju.
+	\item \texttt{sklearn}: Biblioteka za strojno učenje koja sadrži alate za predprocesiranje, modeliranje i evaluaciju.
 	\item \texttt{skimage}: Biblioteka za obradu slika.
 	\item \texttt{imblearn}: Biblioteka za rad s neuravnoteženim podacima, uključujući tehniku oversamplinga.
 \end{itemize}
@@ -427,67 +444,52 @@ Prvi korak je učitavanje biblioteka, podataka iz CSV datoteke i priprema NIfTI 
 
 \begin{lstlisting}[language=Python, caption={Učitavanje podataka i generiranje putanja}]
 	# Ucitavanje CSV podataka
-	data = pd.read_csv("ADNI1_Baseline_3T_3_20_2024.csv")
-	
-	# Ekstrakcija relevantnih kolona
-	labels = data['Group']
-	
-	# Dohvacanje putanja do NIfTI datoteka
-	data_dir = "ADNI_data"
-	image_paths = get_paths("ADNI1_Baseline_3T_3_20_2024.csv", data_dir)
+	csv_path = "./ADNI1_Baseline_3T_3_20_2024.csv"
+	source_path = "./ADNI_data"
+	image_paths = get_paths(csv_path, source_path)
 \end{lstlisting}
 
 \noindent \textbf{Objašnjenje:}
 \begin{itemize}
-	\item \texttt{pandas.read\_csv()}: Učitava podatke iz CSV datoteke.
-	\item \texttt{data['Group']}: Ekstrakcija kolone koja sadrzi labele (dijagnoze).
+	\item \texttt{pd.read\_csv()}: Učitava podatke iz CSV datoteke.
+	\item \texttt{get\_paths()}: Generira putanje do NIfTI datoteka na osnovu informacija iz CSV datoteke.
 \end{itemize}
 
 \subsection{Metoda \texttt{get\_paths()}}
 
-Metoda \texttt{get\_paths()} generira putanje do NIfTI datoteka na osnovu informacija iz CSV datoteke. Evo kako je implementirana:
+Metoda \texttt{get\_paths()} koristi se za generiranje putanja do NIfTI datoteka na osnovu informacija iz CSV datoteke. Ova metoda čita CSV datoteku, obrađuje relevantne informacije i stvara popis putanja do NIfTI datoteka koje se koriste za daljnju analizu.
 
-\begin{lstlisting}[language=Python, caption={Metoda get\_paths()}]
-	import os
-	import pandas as pd
-	from datetime import datetime
-	
+\begin{lstlisting}[language=Python, caption={Metoda get\_paths}]
 	def get_paths(csv_path, source_path):
 	csv = pd.read_csv(csv_path)
 	filepaths = []
 	for key, value in csv.iterrows():
+	if value['Description'].endswith("Scaled"):
 	modality_description = value['Description'].replace(';', '_').replace(' ', '_')
 	acq_date = datetime.strptime(value['Acq Date'], '%m/%d/%Y').strftime('%Y-%m-%d')
-	
 	subject_path = os.path.join(source_path, value['Subject'], modality_description, acq_date, value['Image Data ID'])
-	
+	if os.path.exists(subject_path):
 	with os.scandir(subject_path) as entries:
 	file_name = next(entries).name
-	fmri_path = os.path.join(subject_path, file_name)
-	filepaths.append(fmri_path)
+	smri_path = os.path.join(subject_path, file_name)
+	filepaths.append(smri_path)
 	return filepaths
 \end{lstlisting}
 
 \noindent \textbf{Objašnjenje:}
 \begin{itemize}
-	\item \texttt{os}: Biblioteka za rad s datotečnim sustavom.
-	\item \texttt{pandas}: Biblioteka za manipulaciju i analizu podataka.
-	\item \texttt{datetime}: Biblioteka za rad s datumima i vremenom.
 	\item \texttt{pd.read\_csv()}: Učitava podatke iz CSV datoteke.
-	\item \texttt{csv.iterrows()}: Iterira kroz redove DataFrame-a.
-	\item \texttt{replace()}: Zamjena karaktera u stringu.
-	\item \texttt{datetime.strptime()}: Pretvara string u \texttt{datetime} objekt.
-	\item \texttt{strftime()}: Formatira \texttt{datetime} objekt kao string.
-	\item \texttt{os.path.join()}: Spaja komponente putanje.
-	\item \texttt{os.scandir()}: Iterira kroz direktorij i vraća ulaze u direktoriju.
-	\item \texttt{next()}: Dohvaća sljedeći element iteratora.
+	\item \texttt{replace(';', '\_').replace(' ', '\_')}: Zamjenjuje znakove u opisu modaliteta kako bi bili prikladni za korištenje u putanjama.
+	\item \texttt{datetime.strptime()}: Pretvara datum u odgovarajući format.
+	\item \texttt{os.path.join()}: Stvara putanju do datoteke koristeći informacije iz CSV datoteke.
+	\item \texttt{os.scandir()}: Iterira kroz direktorij i dohvaća ime prve datoteke.
+	\item \texttt{filepaths.append(smri\_path)}: Dodaje putanju do fMRI datoteke u popis putanja.
 \end{itemize}
 
 \subsection{Učitavanje i promjena veličine NIfTI slika}
 
 \begin{lstlisting}[language=Python, caption={Učitavanje i promjena veličine NIfTI slika}]
-	# Ucitavanje i promjena velicine NIfTI slika
-	fixed_shape = (64, 64, 64)  # Fiksna velicina slika
+	fixed_shape = (64, 64, 64)
 	images = []
 	for path in image_paths:
 	try:
@@ -512,12 +514,10 @@ Metoda \texttt{get\_paths()} generira putanje do NIfTI datoteka na osnovu inform
 \subsection{Predprocesiranje podataka}
 
 \begin{lstlisting}[language=Python, caption={Predprocesiranje podataka}]
-	# Broj slika po grupama
-	images_per_group = labels.value_counts()
-	print("Number of images per group:")
-	print(images_per_group)
+	data = pd.read_csv(csv_path)
+	labels = data['Group'][data['Description'].str.endswith("Scaled")]
 	
-	# Label encoding (konverzija labela u integer vrednosti)
+	# Label encoding (konverzija labela u integer vrijednosti)
 	label_encoder = LabelEncoder()
 	y = label_encoder.fit_transform(labels)
 	print("Class 0:", label_encoder.classes_[0])
@@ -532,7 +532,7 @@ Metoda \texttt{get\_paths()} generira putanje do NIfTI datoteka na osnovu inform
 	X_resampled, y_resampled = oversampler.fit_resample(X_flat, y)
 \end{lstlisting}
 
-\noindent \textbf{Objasnjenje:}
+\noindent \textbf{Objašnjenje:}
 \begin{itemize}
 	\item \texttt{LabelEncoder}: Konvertira kategorijske etikete u numeričke vrijednosti.
 	\item \texttt{reshape()}: Mijenja oblik matrice slika u vektor.
@@ -541,13 +541,14 @@ Metoda \texttt{get\_paths()} generira putanje do NIfTI datoteka na osnovu inform
 
 \subsection{Trening i evaluacija modela}
 
-Za svaki model definiramo klasu \texttt{ModelTrainer} koja ce olakšati proces treniranja i evaluacije.
+Za svaki model definiramo klasu \texttt{ModelTrainer} koja će olakšati proces treniranja i evaluacije.
 
 \begin{lstlisting}[language=Python, caption={Klasa ModelTrainer}]
 	class ModelTrainer:
 	def __init__(self, model, model_name):
 	self.model = model
 	self.model_name = model_name
+	self.y_pred = None
 	
 	def evaluate_model(self, X, y):
 	print(f"\nEvaluating {self.model_name}...")
@@ -558,30 +559,32 @@ Za svaki model definiramo klasu \texttt{ModelTrainer} koja ce olakšati proces t
 	
 	def train_and_predict(self, X, y):
 	self.model.fit(X, y)
-	y_pred = cross_val_predict(self.model, X, y, cv=5)
+	self.y_pred = cross_val_predict(self.model, X, y, cv=5)
 	print(f"\n{self.model_name} classification report:")
-	print(classification_report(y, y_pred, zero_division=1))
+	print(classification_report(y, self.y_pred, zero_division=1))
 	print(f"\n{self.model_name} confusion matrix: ")
-	print(confusion_matrix(y, y_pred))
+	print(confusion_matrix(y, self.y_pred))
+	return self.y_pred
 \end{lstlisting}
 
 \noindent \textbf{Objašnjenje:}
 \begin{itemize}
-	\item \texttt{cross\_val\_score()}: Evaluira model koristeći k-fold cross-validation tehniku.
+	\item \texttt{cross\_val\_score()}: Evaluira model koristeći k-fold tehniku \textbf{unakrsne validacije}. U našoj implementaciji koristili smo k-fold unakrsnu validaciju s k=5. To znači da je cijeli skup podataka podijeljen na 5 podskupova. Model je treniran na 4 podskupa, dok je 5. podskup korišten za testiranje. Ovaj proces ponovljen je 5 puta, svaki put koristeći drugi podskup za testiranje. Konačne performanse modela izračunate su kao prosjek performansi na svih 5 iteracija.
 	\item \texttt{fit()}: Treniranje modela na podacima.
 	\item \texttt{cross\_val\_predict()}: Generira predikcije koristeći cross-validation.
 	\item \texttt{classification\_report()}: Prikazuje detaljan izvještaj klasifikacije uključujući preciznost, odziv i F1 mjeru.
 	\item \texttt{confusion\_matrix()}: Prikazuje matricu konfuzije koja prikazuje točne i netočne klasifikacije.
 \end{itemize}
 
-\subsection{Decision Tree}
 
-\begin{lstlisting}[language=Python, caption={Trening i evaluacija Decision Tree modela}]
-	# Trening i evaluacija Decision Tree modela
+\subsection{Stablo odluke}
+
+\begin{lstlisting}[language=Python, caption={Trening i evaluacija Stablo odluke modela}]
+	# Trening i evaluacija Stablo odluke modela
 	decision_tree = DecisionTreeClassifier()
 	dt_trainer = ModelTrainer(decision_tree, "Decision Tree")
 	dt_trainer.evaluate_model(X_resampled, y_resampled)
-	dt_trainer.train_and_predict(X_resampled, y_resampled)
+	y_pred_dt = dt_trainer.train_and_predict(X_resampled, y_resampled)
 \end{lstlisting}
 
 \noindent \textbf{Objašnjenje:}
@@ -596,7 +599,7 @@ Za svaki model definiramo klasu \texttt{ModelTrainer} koja ce olakšati proces t
 	random_forest = RandomForestClassifier(n_estimators=100, random_state=42)
 	rf_trainer = ModelTrainer(random_forest, "Random Forest")
 	rf_trainer.evaluate_model(X_resampled, y_resampled)
-	rf_trainer.train_and_predict(X_resampled, y_resampled)
+	y_pred_rf = rf_trainer.train_and_predict(X_resampled, y_resampled)
 \end{lstlisting}
 
 \noindent \textbf{Objašnjenje:}
@@ -611,7 +614,7 @@ Za svaki model definiramo klasu \texttt{ModelTrainer} koja ce olakšati proces t
 	svm = SVC(kernel='linear', random_state=42)
 	svm_trainer = ModelTrainer(svm, "Support Vector Machine")
 	svm_trainer.evaluate_model(X_resampled, y_resampled)
-	svm_trainer.train_and_predict(X_resampled, y_resampled)
+	y_pred_svm = svm_trainer.train_and_predict(X_resampled, y_resampled)
 \end{lstlisting}
 
 \noindent \textbf{Objašnjenje:}
@@ -624,22 +627,20 @@ Za svaki model definiramo klasu \texttt{ModelTrainer} koja ce olakšati proces t
 \chapter{Rezultati i rasprava}
 \label{pog:rezultati_i_rasprava}
 
-\section{Rezultati klasifikacije}
-
-\subsection{Osnovni pojmovi}
+\section{Osnovni pojmovi}
 
 Prije nego što predstavimo rezultate, važno je definirati ključne pojmove korištene u evaluaciji modela strojnog učenja.
 
-\subsubsection{Točnost (Accuracy)}
+\subsection{Točnost (Accuracy)}
 
 Točnost je omjer točnih predikcija i ukupnog broja predikcija. To je jednostavna metrika koja pokazuje koliko je model precizan u svojim predikcijama:
 \begin{equation}
 	\text{Accuracy} = \frac{\text{Broj točnih predikcija}}{\text{Ukupan broj predikcija}}
 \end{equation}
 
-\subsubsection{Matrica konfuzije (Confusion Matrix)}
+\subsection{Matrica zabune (Confusion Matrix)}
 
-Matrica konfuzije je tablica koja prikazuje performanse modela klasifikacije na skupu testnih podataka za koje su poznate stvarne vrijednosti. Ona prikazuje broj točnih i netočnih predikcija za svaku klasu. Tipična matrica konfuzije \ref{tab:conf_matrix} izgleda ovako:
+Matrica zabune je tablica koja prikazuje performanse modela klasifikacije na skupu testnih podataka za koje su poznate stvarne vrijednosti. Ona prikazuje broj točnih i netočnih predikcija za svaku klasu. Tipična matrica zabune \ref{tab:conf_matrix} izgleda ovako:
 
 \begin{table}[h]
 	\centering
@@ -653,7 +654,7 @@ Matrica konfuzije je tablica koja prikazuje performanse modela klasifikacije na 
 	\label{tab:conf_matrix}
 \end{table}
 
-\subsubsection{Preciznost (Precision), Odziv (Recall) i F1-mjera (F1-score)}
+\subsection{Preciznost (Precision), odziv (Recall) i F1-mjera (F1-score)}
 
 \begin{itemize}
 	\item \textbf{Preciznost (Precision)} je omjer točnih pozitivnih predikcija i ukupnog broja pozitivnih predikcija \cite{medium_confusion_matrix}:
@@ -671,22 +672,18 @@ Matrica konfuzije je tablica koja prikazuje performanse modela klasifikacije na 
 \end{itemize}
 
 
-\subsubsection{Weighted Average (Weighted Avg) i Macro Average (Macro Avg)}
+\subsection{Težinski uprosječene mjere (Weighted avg) i makro-usprosječene mjere (Macro avg)}
 
-\textbf{Weighted average} također izračunava metričku vrijednost (preciznost, odziv ili F1-score) za svaku klasu, ali uzima u obzir broj uzoraka u svakoj klasi prilikom izračunavanja prosjeka \cite{Mathew2023}. To znači da klase s više uzoraka imaju veću težinu u konačnom prosjeku. Na primjer, ako imamo tri klase s preciznostima od 0.71, 0.61 i 0.59 i brojem uzoraka od 92, 92 i 92, njihov weighted average bi bio:
+\textbf{Weighted avg} također izračunava metričku vrijednost (preciznost, odziv ili F1-score) za svaku klasu, ali uzima u obzir broj uzoraka u svakoj klasi prilikom izračunavanja prosjeka \cite{Mathew2023}. To znači da klase s više uzoraka imaju veću težinu u konačnom prosjeku. Na primjer, ako imamo tri klase s preciznostima od 0.71, 0.61 i 0.59 i brojem uzoraka od 92, 92 i 92, njihov weighted average bi bio:
 \[ \text{Weighted Avg Precision} = \frac{(92 \times 0.71) + (92 \times 0.61) + (92 \times 0.59)}{276} = 0.64 \]
 
-\textbf{Macro average} izračunava metričku vrijednost (preciznost, odziv ili F1-score) za svaku klasu pojedinačno i zatim izračunava prosjek tih vrijednosti \cite{Mathew2023}. Svaka klasa ima jednaku težinu, bez obzira na broj uzoraka u toj klasi. Na primjer, ako imamo tri klase s preciznostima od 0.71, 0.61 i 0.59, njihov macro average bi bio:
+\textbf{Macro avg} izračunava metričku vrijednost (preciznost, odziv ili F1-score) za svaku klasu pojedinačno i zatim izračunava prosjek tih vrijednosti \cite{Mathew2023}. Svaka klasa ima jednaku težinu, bez obzira na broj uzoraka u toj klasi. Na primjer, ako imamo tri klase s preciznostima od 0.71, 0.61 i 0.59, njihov macro average bi bio:
 \[ \text{Macro Avg Precision} = \frac{0.71 + 0.61 + 0.59}{3} = 0.64 \]
 
 
-\subsubsection{Kros-validacija (Cross-validation)}
+\section{Rezultati klasifikacije}
 
-Kros-validacija je tehnika za procjenu generalizacijske sposobnosti modela koristeći različite podskupove podataka za treniranje i testiranje \cite{medium_confusion_matrix} \cite{towardsdatascience_confusion_matrix}. Najčešće korištena tehnika je k-fold kros-validacija, gdje je set podataka podijeljen na k podskupova (folds). Model se trenira na k-1 podskupu, a testira na preostalom podskupu. Proces se ponavlja k puta, svaki put koristeći drugi podskup za testiranje.
-
-\subsection{Rezultati klasifikacije}
-
-Kao što je prikazano u prethodnom poglavlju, implementirali smo tri različita modela za klasifikaciju Alzheimerove bolesti (AD), blagog kognitivnog poremećaja (MCI) i kognitivno normalnih (CN) subjekata koristeći strukturne MRI slike. Ovdje ćemo prikazati dobivene rezultate za svaki model.
+Kao što je prikazano u prethodnom poglavlju, implementirali smo tri različita modela za klasifikaciju Alzheimerove bolesti (AD), blagog kognitivnog poremećaja (MCI) i kognitivno normalnih (CN) subjekata koristeći strukturne MRI slike. Ovdje ćemo prikazati dobivene rezultate nakon unakrsne validacije za svaki model.
 
 \noindent \textbf{Distribucija klasa:}
 \begin{itemize}
@@ -695,151 +692,165 @@ Kao što je prikazano u prethodnom poglavlju, implementirali smo tri različita 
 	\item Class 2: MCI
 \end{itemize}
 
-\subsubsection{Decision Tree}
 
-Rezultati za Decision Tree model:
+\subsection{Stablo odluke}
+
+Rezultati za DT model:
 
 \begin{verbatim}
 	Evaluating Decision Tree...
-	Decision Tree cross-validation scores: [0.64285714 0.58181818 0.70909091 0.69090909 0.72727273]
-	Mean Decision Tree cross-validation score: 0.6703896103896104
+	
+	Decision Tree cross-validation scores: [0.52380952 0.64285714 0.58536585 0.75609756 0.7804878 ]
+	Mean Decision Tree cross-validation score: 0.6577235772357722
 	
 	Decision Tree classification report:
 	precision    recall  f1-score   support
 	
-	0       0.71      0.95      0.81        92
-	1       0.61      0.73      0.67        92
-	2       0.59      0.28      0.38        92
+	0       0.69      0.88      0.78        69
+	1       0.64      0.62      0.63        69
+	2       0.69      0.52      0.60        69
 	
-	accuracy                           0.65       276
-	macro avg       0.64      0.65      0.62       276
-	weighted avg       0.64      0.65      0.62       276
+	accuracy                           0.68       207
 	
+	macro avg       0.68      0.68      0.67       207
+	
+	weighted avg       0.68      0.68      0.67       207
 \end{verbatim}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/matrix_dt.png}
+	\includegraphics[width=0.7\textwidth]{Figures/matrix_dt_2.png}
 	\caption{Confusion Matrix - Decision Tree}
 	\label{fig:matrix_dt}
 \end{figure}
 
-\subsubsection{Random Forest}
+\subsection{Slučajna šuma}
 
-Rezultati za Random Forest model:
+Rezultati za RF model:
 
 \begin{verbatim}
 	Evaluating Random Forest...
-	Random Forest cross-validation scores: [0.64285714 0.65454545 0.76363636 0.83636364 0.74545455]
-	Mean Random Forest cross-validation score: 0.7285714285714286
+	
+	Random Forest cross-validation scores: [0.5        0.5952381  0.70731707 0.80487805 0.75609756]
+	Mean Random Forest cross-validation score: 0.6727061556329849
 	
 	Random Forest classification report:
 	precision    recall  f1-score   support
 	
-	0       0.82      0.93      0.87        92
-	1       0.69      0.73      0.71        92
-	2       0.65      0.52      0.58        92
+	0       0.70      0.90      0.79        69
+	1       0.63      0.65      0.64        69
+	2       0.67      0.46      0.55        69
 	
-	accuracy                           0.73       276
-	macro avg       0.72      0.73      0.72       276
-	weighted avg       0.72      0.73      0.72       276
-
+	accuracy                           0.67       207
+	
+	macro avg       0.67      0.67      0.66       207
+	
+	weighted avg       0.67      0.67      0.66       207
 \end{verbatim}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/matrix_rf.png}
+	\includegraphics[width=0.7\textwidth]{Figures/matrix_rf_2.png}
 	\caption{Confusion Matrix - Random Forest}
 	\label{fig:matrix_rf}
 \end{figure}
 
-\subsubsection{Support Vector Machine}
+\subsection{Stroj potpornih vektora}
 
-Rezultati za Support Vector Machine model:
+Rezultati za SVM model:
 
 \begin{verbatim}
 	Evaluating Support Vector Machine...
-	Support Vector Machine cross-validation scores: [0.66071429 0.58181818 0.67272727 0.85454545 0.76363636]
-	Mean Support Vector Machine cross-validation score: 0.7066883116883117
+	
+	Support Vector Machine cross-validation scores: [0.52380952 0.57142857 0.53658537 0.85365854 0.7804878 ]
+	Mean Support Vector Machine cross-validation score: 0.6531939605110336
 	
 	Support Vector Machine classification report:
 	precision    recall  f1-score   support
 	
-	0       0.79      0.93      0.86        92
-	1       0.66      0.68      0.67        92
-	2       0.64      0.50      0.56        92
+	0       0.73      0.91      0.81        69
+	1       0.65      0.65      0.65        69
+	2       0.62      0.46      0.53        69
 	
-	accuracy                           0.71       276
-	macro avg       0.70      0.71      0.70       276
-	weighted avg       0.70      0.71      0.70       276
-
+	accuracy                           0.68       207
+	
+	macro avg       0.67      0.68      0.66       207
+	
+	weighted avg       0.67      0.68      0.66       207
 \end{verbatim}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/matrix_svm.png}
+	\includegraphics[width=0.7\textwidth]{Figures/matrix_svm_2.png}
 	\caption{Confusion Matrix - Support Vector Machine}
 	\label{fig:matrix_svm}
 \end{figure}
 
-
 \subsection{Usporedba rezultata}
 
-Kada usporedimo rezultate između modela, vidljivo je sljedeće:
+Usporedba rezultata između modela prikazana je u tablici \ref{tab:classification_results}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		& \textbf{Stablo odluke} & \textbf{Random Forest} & \textbf{Support Vector Machine} \\ \hline
+		\textbf{Cross-validation scores} & [0.52380952, 0.64285714, 0.58536585, 0.75609756, 0.7804878] & [0.5, 0.5952381, 0.70731707, 0.80487805, 0.75609756] & [0.52380952, 0.57142857, 0.53658537, 0.85365854, 0.7804878] \\ \hline
+		\textbf{Mean cross-validation score} & 0.6577 & 0.6727 & 0.6532 \\ \hline
+		\textbf{Precision (Class 0: AD)} & 0.69 & 0.70 & 0.73 \\ \hline
+		\textbf{Precision (Class 1: CN)} & 0.64 & 0.63 & 0.65 \\ \hline
+		\textbf{Precision (Class 2: MCI)} & 0.69 & 0.67 & 0.62 \\ \hline
+		\textbf{Recall (Class 0: AD)} & 0.88 & 0.90 & 0.91 \\ \hline
+		\textbf{Recall (Class 1: CN)} & 0.62 & 0.65 & 0.65 \\ \hline
+		\textbf{Recall (Class 2: MCI)} & 0.52 & 0.46 & 0.46 \\ \hline
+		\textbf{F1-score (Class 0: AD)} & 0.78 & 0.79 & 0.81 \\ \hline
+		\textbf{F1-score (Class 1: CN)} & 0.63 & 0.64 & 0.65 \\ \hline
+		\textbf{F1-score (Class 2: MCI)} & 0.60 & 0.55 & 0.53 \\ \hline
+		\textbf{Accuracy} & 0.68 & 0.67 & 0.68 \\ \hline
+		\textbf{Macro avg precision} & 0.68 & 0.67 & 0.67 \\ \hline
+		\textbf{Macro avg recall} & 0.68 & 0.67 & 0.68 \\ \hline
+		\textbf{Macro avg F1-score} & 0.67 & 0.66 & 0.66 \\ \hline
+		\textbf{Weighted avg precision} & 0.68 & 0.67 & 0.67 \\ \hline
+		\textbf{Weighted avg recall} & 0.68 & 0.67 & 0.68 \\ \hline
+		\textbf{Weighted avg F1-score} & 0.67 & 0.66 & 0.66 \\ \hline
+	\end{tabularx}
+	\caption{Usporedba rezultata klasifikacijskih modela}
+	\label{tab:classification_results}
+\end{table}
 
 \begin{itemize}
-	\item \textbf{Točnost (accuracy)}: Random Forest postiže najvišu točnost od 0.73, dok Support Vector Machine (SVM) postiže točnost od 0.71, a Decision Tree najnižu točnost od 0.65.
-	\item \textbf{Precision i Recall}: Random Forest model ima najvišu preciznost i recall za klasu AD (Preciznost: 0.82, Recall: 0.93), dok Decision Tree i Random Forest pokazuju isti recall za klasu CN (0.73).
-	\item \textbf{Confusion Matrix}: Sve tri matrice konfuzije pokazuju da modeli imaju problema s ispravnim klasificiranjem MCI slučajeva, što može biti zbog manjeg broja uzoraka u ovoj klasi u odnosu na druge.
+	\item \textbf{Točnost (accuracy)}: Stablo odluke i SVM postižu točnost od 0.68, dok Random Forest postiže točnost od 0.67.
+	\item \textbf{Precision i Recall}: SVM model ima najvišu preciznost i recall za klasu AD (Preciznost: 0.73, Recall: 0.91). Međutim, svi modeli imaju sličan rezultat.
+    \item \textbf{Confusion Matrix}: Sve tri matrice konfuzije pokazuju da modeli imaju problema s ispravnim klasificiranjem MCI slučajeva, što može biti rezultat sličnosti MCI klasa s ostalim klasama, što otežava pravilno razlikovanje.
+    \item \textbf{Cross-validation score}: Random Forest pokazuje najveću prosječnu točnost u rezultatima unakrsne validacije, što ukazuje na bolju generalizaciju u odnosu na druge modele.
+    \item \textbf{Classification report}: Preciznost, recall i F1-score daju detaljan pregled performansi modela po klasama. Support Vector Machine ima najvišu vrijednost ovih metrika za većinu klasa.
 \end{itemize}
 
-\subsubsection{Objašnjenje rezultata}
-\textbf{Cross-validation scores:}
-- Random Forest pokazuje najveću prosječnu točnost u kross-validaciji, što ukazuje na bolju generalizaciju u odnosu na druge modele.
 
-\textbf{Classification report:}
-- Preciznost, odziv i F1-score daju detaljan pregled performansi modela po klasama. Random Forest ima najvišu vrijednost ovih metrika za većinu klasa, dok Decision Tree i SVM pokazuju specifične prednosti u određenim klasama.
+\subsection{Usporedba s drugim istraživanjima}
 
-\textbf{Confusion Matrix:}
-- Matrica konfuzije prikazuje točne i netočne klasifikacije po klasama. Problem s klasifikacijom MCI slučajeva je prisutan u svim modelima, ali je najizraženiji u Decision Tree modelu.
+U ovom dijelu analizirat ćemo rezultate našeg istraživanja u usporedbi s rezultatima iz nekoliko relevantnih radova koji su također koristili metode strojnog učenja za klasifikaciju Alzheimerove bolesti, blagog kognitivnog poremećaja i kognitivno normalnih subjekata.
 
+U radu \cite{MultimodalRF} autori istražuju učinkovitost Random Forest modela za klasifikaciju Alzheimerove bolesti koristeći multimodalne MRI podatke iz TADPOLE dataset-a, koji je dio ADNI inicijative. Korištenjem strukturnih MRI, DTI i rs-fMRI podataka, autori su postigli točnost od 69.33\%. Makro prosječna preciznost bila je 69.33\%, dok je makro prosječan recall iznosio 40.94\%, a makro prosječan F1-score 51.48\%. Naši rezultati za Random Forest model pokazuju točnost od 67\%, s makro prosječnom preciznošću od 67\%, makro prosječnim recall-om od 67\% i makro prosječnim F1-score-om od 66\%. Ovi rezultati sugeriraju da naš model ima sličnu učinkovitost u klasifikaciji različitih stadija Alzheimerove bolesti, ali postoji prostor za poboljšanje u usporedbi s njihovim rezultatima.
 
-\subsection{Usporedba s tuđim rezultatima}
+U radu \cite{IRJET}, autori su pregledali različite algoritme strojnog učenja za klasifikaciju stadija Alzheimerove bolesti koristeći MRI podatke iz ADNI baze. Posebnu pažnju posvetili su Support Vector Machine (SVM) algoritmu. Rezultati koje su postigli pokazuju visoku točnost za različite parove klasa: EMCI vs. CN 93.8\%, LMCI vs. CN 95.8\%, AD vs. CN 95.8\% i LMCI vs. AD 91.7\%. Naš SVM model postigao je ukupnu točnost od 68\%, s makro prosječnom preciznošću od 67\%, makro prosječnim recall-om od 68\% i makro prosječnim F1-score-om od 66\%. Iako su naši rezultati niži u usporedbi s njihovim specifičnim točnostima za parove klasa, važno je napomenuti da su njihovi rezultati specifični za određene klasifikacije, dok naši rezultati predstavljaju ukupnu učinkovitost modela za sve klase.
 
-U ovom dijelu analizirat ćemo rezultate našeg istraživanja u usporedbi s rezultatima iz nekoliko relevantnih radova koji su također koristili metode strojnog učenja za klasifikaciju Alzheimerove bolesti (AD), blagog kognitivnog poremećaja (MCI) i kognitivno normalnih (CN) subjekata.
+U radu \cite{AnalysisPerformance}, autori su analizirali performanse različitih tehnika strojnog učenja, uključujući Random Forest, za otkrivanje i klasifikaciju Alzheimerove bolesti koristeći MRI podatke. Korištenje Random Forest modela u njihovoj studiji rezultiralo je točnošću od 69.33\%, makro prosječnom preciznošću od 69.33\%, makro prosječnim recall-om od 40.94\% i makro prosječnim F1-score-om od 51.48\%. U usporedbi s našim rezultatima, naš Random Forest model pokazuje točnost od 67\% i slične makro prosječne metrike (precision: 67\%, recall: 67\%, F1-score: 66\%). Ovi rezultati ukazuju na sličnu učinkovitost našeg modela u klasifikaciji Alzheimerove bolesti, ali postoji prostor za poboljšanje u usporedbi s njihovim rezultatima.
 
-
-U radu \cite{MultimodalRF} autori istražuju učinkovitost Random Forest modela za klasifikaciju Alzheimerove bolesti koristeći multimodalne MRI podatke iz TADPOLE dataset-a, koji je dio ADNI inicijative. Korištenjem strukturnih MRI, DTI i rs-fMRI podataka, autori su postigli točnost od 69.33\%. Makro prosječna preciznost bila je 69.33\%, dok je makro prosječan recall iznosio 40.94\%, a makro prosječan F1-score 51.48\% .
-Naši rezultati za Random Forest model pokazuju višu točnost od 73\%, s makro prosječnom preciznošću od 72\%, makro prosječnim recall-om od 73\% i makro prosječnim F1-score-om od 72\%. Ovi rezultati sugeriraju da naš model ima bolju učinkovitost u klasifikaciji različitih stadija Alzheimerove bolesti, što može biti posljedica bolje obrade podataka ili drugačije konfiguracije modela.
-
-
-U radu \cite{IRJET}, autori su pregledali različite algoritme strojnog učenja za klasifikaciju stadija Alzheimerove bolesti koristeći MRI podatke iz ADNI baze. Posebnu pažnju posvetili su Support Vector Machine (SVM) algoritmu. Rezultati koje su postigli pokazuju visoku točnost za različite parove klasa: EMCI vs. CN 93.8\%, LMCI vs. CN 95.8\%, AD vs. CN 95.8\% i LMCI vs. AD 91.7\% .
-Naš SVM model postigao je ukupnu točnost od 71\%, s makro prosječnom preciznošću od 70\%, makro prosječnim recall-om od 71\% i makro prosječnim F1-score-om od 70\%. Iako su naši rezultati niži u usporedbi s njihovim specifičnim točnostima za parove klasa, važno je napomenuti da su njihovi rezultati specifični za određene klasifikacije, dok naši rezultati predstavljaju ukupnu učinkovitost modela za sve klase.
-
-
-U radu \cite{AnalysisPerformance}, autori su analizirali performanse različitih tehnika strojnog učenja, uključujući Random Forest, za otkrivanje i klasifikaciju Alzheimerove bolesti koristeći MRI podatke. Korištenje Random Forest modela u njihovoj studiji rezultiralo je točnošću od 69.33\%, makro prosječnom preciznošću od 69.33\%, makro prosječnim recall-om od 40.94\% i makro prosječnim F1-score-om od 51.48\%.
-U usporedbi s našim rezultatima, naš Random Forest model pokazuje bolju točnost (73\%) i sveukupno bolje makro prosječne metrike (precision: 72\%, recall: 73\%, F1-score: 72\%). Ovi rezultati ukazuju na veću učinkovitost našeg modela u klasifikaciji Alzheimerove bolesti, što može biti posljedica bolje obrade podataka, optimizacije modela ili korištenja dodatnih značajki.
-
-
-
-U radu \cite{asi}, istražena je klasifikacija Alzheimerove bolesti koristeći Decision Tree, SVM i Ensemble modele. Njihovi rezultati pokazuju točnost Decision Tree modela od 86.8\%, dok SVM i Ensemble modeli postižu točnost od 87.2\% i 86.3\% respektivno. Ovi rezultati ukazuju na visoku točnost koju je moguće postići korištenjem jednostavnijih modela uz pravilnu obradu podataka .
-Naš Decision Tree model postigao je točnost od 65\%, s makro prosječnom preciznošću od 64\%, makro prosječnim recall-om od 65\% i makro prosječnim F1-score-om od 62\%. Ovi rezultati su niži u usporedbi s rezultatima iz literature, što sugerira da je moguće poboljšati naš model korištenjem boljih tehnika obrade podataka ili optimizacije modela.
-
-
-
+U radu \cite{asi}, istražena je klasifikacija Alzheimerove bolesti koristeći Stablo odluke, SVM i Ensemble modele. Njihovi rezultati pokazuju točnost Stablo odluke modela od 86.8\%, dok SVM i Ensemble modeli postižu točnost od 87.2\% i 86.3\% respektivno. Ovi rezultati ukazuju na visoku točnost koju je moguće postići korištenjem jednostavnijih modela uz pravilnu obradu podataka. Naš Stablo odluke model postigao je točnost od 68\%, s makro prosječnom preciznošću od 68\%, makro prosječnim recall-om od 68\% i makro prosječnim F1-score-om od 67\%. Ovi rezultati su niži u usporedbi s rezultatima iz literature, što sugerira da je moguće poboljšati naš model korištenjem boljih tehnika obrade podataka ili optimizacije modela.
 %--- ZAKLJUČAK / CONCLUSION ----------------------------------------------------
 \chapter{Zaključak}
 \label{pog:zakljucak}
-U ovom radu smo istražili primjenu modela strojnog učenja za klasifikaciju Alzheimerove bolesti koristeći strukturne MRI slike iz ADNI baze podataka. Fokusirali smo se na implementaciju i evaluaciju triju različitih modela: Decision Tree, Random Forest i Support Vector Machine (SVM). Cilj je bio usporediti njihove performanse i utvrditi koji model pruža najbolje rezultate u klasifikaciji Alzheimerove bolesti (AD), blagih kognitivnih poremećaja (MCI) i kognitivno normalnih (CN) subjekata.
+U ovom radu smo istražili primjenu modela strojnog učenja za klasifikaciju Alzheimerove bolesti koristeći strukturne MRI slike iz ADNI baze podataka. Fokusirali smo se na implementaciju i evaluaciju triju različitih modela: Stablo odluke, Slučajna šuma i SVM. Cilj je bio usporediti njihove performanse i utvrditi koji model pruža najbolje rezultate u klasifikaciji Alzheimerove bolesti, blagih kognitivnih poremećaja i kognitivno normalnih subjekata.
 
-Korištenjem dostupnih podataka, najprije smo izvršili pripremu podataka te njihovu prilagodbu u standardizirani format pogodniji za ulaz u modele strojnog učenja. Nadalje, koristili smo metode poput prekomjernog uzorkovanja kako bismo se nosili s problemom neravnoteže klasa, što je čest problem u medicinskim istraživanjima.
+Korištenjem dostupnih podataka, najprije smo izvršili pripremu podataka te njihovu prilagodbu u standardizirani format pogodniji za ulaz u modele strojnog učenja. Nadalje, koristili smo metode poput prekomjernog uzorkovanja kako bismo se nosili s problemom neravnoteže klasa, što je čest problem u medicinskim istraživanjima. Oversampling tehnika umjetno generira dodatne uzorke za klase s manjim brojem podataka, što nam je pomoglo u boljem balansiranju dataset-a.
 
 Usporedba naših rezultata s relevantnim radovima iz literature pokazuje da su naši modeli konkurentni, ali postoje područja za poboljšanje.
 
 Ovi rezultati ukazuju na nekoliko važnih zaključaka. 
-Prvo, Random Forest model pokazuje najveći potencijal za točnu klasifikaciju Alzheimerove bolesti među istraženim modelima. 
-Drugo, najveći je izazov klasifikacije MCI slučajeva, što sugerira potrebu za daljnjim istraživanjem u ovoj domeni, možda kroz korištenje dodatnih značajki ili kombinaciju različitih modela. 
-Treće, iako su naši modeli konkurentni, usporedba s radovima iz literature pokazuje da postoji prostor za poboljšanje, posebno kroz optimizaciju modela i poboljšanje metoda obrade podataka.
+Prvo, svi modeli pokazali su slične rezultate u klasifikaciji Alzheimerove bolesti, blagih kognitivnih poremećaja i kognitivno normalnih subjekata. SVM model pokazao je najvišu preciznost i recall za klasu AD, dok su Stablo odluke i Slučajna šuma pokazali prednosti u drugim metrikama.
+Drugo, klasifikacija MCI slučajeva predstavljala je izazov za sve modele, što sugerira potrebu za daljnjim istraživanjem u ovoj domeni, možda kroz korištenje dodatnih značajki ili kombinaciju različitih modela.
+Treće, iako su naši modeli konkurentni, usporedba s radovima iz literature pokazuje da postoji prostor za poboljšanje, posebno kroz optimizaciju modela i poboljšanje metoda obrade podataka. Također, korištenje oversamplinga može utjecati na rezultate, stoga je potrebno dodatno istražiti efekte ove tehnike na performanse modela.
 
 Što se tiče budućeg rada, bilo bi dobro usmjeriti se na istraživanje naprednijih tehnika obrade podataka i značajki, te korištenje metoda koje kombiniraju prednosti različitih modela. Također, korištenje dubokog učenja može pružiti dodatne prednosti, posebno u prepoznavanju složenih uzoraka u MRI slikama.
 
@@ -855,25 +866,22 @@ Treće, iako su naši modeli konkurentni, usporedba s radovima iz literature pok
 %--- SAŽETAK / ABSTRACT --------------------------------------------------------
 
 % Sažetak na hrvatskom
-% Sažetak na hrvatskom
 \begin{sazetak}
-	Ovaj rad istražuje primjenu strojnog učenja za klasifikaciju Alzheimerove bolesti koristeći strukturne MRI slike iz ADNI baze podataka. Implementirani su modeli stabla odluke, nasumične šume i stroja potpornih (SVM). Model nasumične šume postiže najvišu točnost od 73\%, dok SVM postiže 71\%, a stablo odluke 65\%. Usporedba s relevantnim radovima iz literature pokazuje da naši modeli ostvaruju konkurentne rezultate, ali postoji prostor za poboljšanje, posebno u klasifikaciji MCI slučajeva.
+	Ovaj rad istražuje primjenu strojnog učenja za klasifikaciju Alzheimerove bolesti koristeći strukturne MRI slike iz ADNI baze podataka. Implementirani su modeli stabla odluke, nasumične šume i stroja potpornih vektora (SVM). Model nasumične šume postiže točnost od 67\%, dok SVM postiže 65\%, a stablo odluke 68\%. Usporedba s relevantnim radovima iz literature pokazuje da naši modeli ostvaruju konkurentne rezultate, ali postoji prostor za poboljšanje, posebno u klasifikaciji slučajeva s blagim kognitivnim oštećenjem.
 \end{sazetak}
 
 \begin{kljucnerijeci}
-	Strojno učenje; Alzheimerova bolest; Klasifikacija; Stablo odluke; Nasumična šuma; SVM; MRI; strukturni MRI
+	Strojno učenje; Alzheimerova bolest; Klasifikacija; Stablo odluke; Slučajna šuma; Stroj potpornih vektora; MRI; strukturni MRI
 \end{kljucnerijeci}
 
 % Abstract in English
 \begin{abstract}
-	This paper explores the application of machine learning for the classification of Alzheimer's disease using structural MRI images from the ADNI database. Implemented models include Decision Tree, Random Forest, and Support Vector Machine (SVM). The comparison with relevant literature indicates that our models achieve competitive results, with room for improvement, particularly in the classification of MCI cases.
+	This paper explores the application of machine learning for the classification of Alzheimer's disease using structural MRI images from the ADNI database. Implemented models include Decision Tree, Random Forest, and Support Vector Machine (SVM). The Random Forest model achieves an accuracy of 67\%, while SVM achieves 65\% and Decision Tree achieves 68\%. The comparison with relevant literature indicates that our models achieve competitive results, though there is room for improvement, particularly in classifying mild cognitive impairment.
 \end{abstract}
 
 \begin{keywords}
-	machine learning; Alzheimer's disease; classification; Decision Tree; Random Forest; SVM; MRI; structural MRI
+	machine learning; Alzheimer's disease; classification; Decision Tree; Random Forest; Support Vector Machine; MRI; structural MRI
 \end{keywords}
-
-
 
 
 %--- PRIVITCI / APPENDIX -------------------------------------------------------

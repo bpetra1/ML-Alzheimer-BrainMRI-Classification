@@ -26,17 +26,17 @@
 
 \bibitem{PMID:29763097}
 \BIBentryALTinterwordspacing
-A.~Kumar, J.~Sidhu, A.~Goyal, i J.~W. Tsao, \emph{Alzheimer Disease}.\hskip 1em
-  plus 0.5em minus 0.4em\relax StatPearls Publishing, Treasure Island (FL),
+A.~Kumar, J.~Sidhu, A.~Goyal, i J.~W. Tsao, \emph{{Alzheimer Disease}}.\hskip
+  1em plus 0.5em minus 0.4em\relax StatPearls Publishing, Treasure Island (FL),
   2023. [Mre\v zno]. Adresa: \url{http://europepmc.org/books/NBK499922}
 \BIBentrySTDinterwordspacing
 
 \bibitem{MIMICA2010409}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
-N.~Mimica i P.~Presečki, ``Current treatment options for people with
-  alzheimer's disease in croatia'', \emph{Chemico-Biological Interactions}, sv.
-  187, br.~1, str. 409--410, 2010., 10th International Meeting on
+N.~Mimica i P.~Presečki, ``{Current treatment options for people with
+  Alzheimer's disease in Croatia}'', \emph{Chemico-Biological Interactions},
+  sv. 187, br.~1, str. 409--410, 2010., 10th International Meeting on
   Cholinesterases.
   \url{https://doi.org/https://doi.org/10.1016/j.cbi.2010.03.029}
 \BIBentrySTDinterwordspacing
@@ -44,26 +44,17 @@ N.~Mimica i P.~Presečki, ``Current treatment options for people with
 
 \bibitem{10.1007/s00500-020-05292-x}
 \BIBentryALTinterwordspacing
-S.~Rohini, M., ``D. toward alzheimer’s disease classification through machine
-  learning'', \emph{Soft Comput}, sv.~25, str. 2589–2597, 2021.
+S.~Rohini, M., ``{Toward Alzheimer’s disease classification through machine
+  learning}'', \emph{Soft Comput}, sv.~25, str. 2589–2597, 2021.
   \url{https://doi.org/10.1007/s00500-020-05292-x}
-\BIBentrySTDinterwordspacing
-
-\bibitem{doi:10.1212/WNL.0b013e3181c3f293}
-\BIBentryALTinterwordspacing
-\BIBentryALTinterwordspacing
-C.~A. Raji, O.~L. Lopez, L.~H. Kuller, O.~T. Carmichael, i J.~T. Becker, ``Age,
-  alzheimer disease, and brain structure'', \emph{Neurology}, sv.~73, br.~22,
-  str. 1899--1905, 2009. \url{https://doi.org/10.1212/WNL.0b013e3181c3f293}
-\BIBentrySTDinterwordspacing
 \BIBentrySTDinterwordspacing
 
 \bibitem{10.3389/fnins.2015.00307}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
 C.~Salvatore, A.~Cerasa, P.~Battista, M.~C. Gilardi, A.~Quattrone, i
-  I.~Castiglioni, ``Magnetic resonance imaging biomarkers for the early
-  diagnosis of alzheimer's disease: a machine learning approach'',
+  I.~Castiglioni, ``{Magnetic resonance imaging biomarkers for the early
+  diagnosis of Alzheimer's disease: a machine learning approach}'',
   \emph{Frontiers in Neuroscience}, sv.~9, 2015.
   \url{https://doi.org/10.3389/fnins.2015.00307}
 \BIBentrySTDinterwordspacing
@@ -71,7 +62,7 @@ C.~Salvatore, A.~Cerasa, P.~Battista, M.~C. Gilardi, A.~Quattrone, i
 
 \bibitem{Gore2003}
 \BIBentryALTinterwordspacing
-J.~C. Gore, ``Principles and practice of functional mri of the human brain'',
+J.~C. Gore, ``{Principles and practice of functional MRI of the human brain}'',
   \emph{J Clin Invest.}, sv. 112(1), str. 4.9, 2003.
   \url{https://doi.org/10.1172/JCI19010}
 \BIBentrySTDinterwordspacing
@@ -79,31 +70,34 @@ J.~C. Gore, ``Principles and practice of functional mri of the human brain'',
 \bibitem{Gonuguntla2022}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
-V.~Gonuguntla, E.~Yang, Y.~Guan, B.-B. Koo, i J.-H. Kim, ``Brain signatures
-  based on structural mri: Classification for mci, pmci, and ad'', \emph{Human
+V.~Gonuguntla, E.~Yang, Y.~Guan, B.-B. Koo, i J.-H. Kim, ``{Brain signatures
+  based on structural MRI: Classification for MCI, PMCI, and AD}'', \emph{Human
   Brain Mapping}, sv.~43, br.~9, str. 2845--2860, 2022.
   \url{https://doi.org/https://doi.org/10.1002/hbm.25820}
 \BIBentrySTDinterwordspacing
 \BIBentrySTDinterwordspacing
 
 \bibitem{ucsd2021}
-U.~S. Diego, ``Structural mri imaging'',
+U.~S. Diego, ``{Structural MRI Imaging}'',
   \url{http://fmri.ucsd.edu/Howto/3T/structure.html}, 2021., accessed:
   2024-05-29.
 
 \bibitem{Schaper573006}
 \BIBentryALTinterwordspacing
-C.~D. Schaper, ``Analytic model of fmri bold signals for separable metrics of
-  neural and metabolic activity'', 2019. \url{https://doi.org/10.1101/573006}
+\BIBentryALTinterwordspacing
+C.~D. Schaper, ``{Analytic Model of fMRI BOLD Signals for Separable Metrics of
+  Neural and Metabolic Activity}'', \emph{bioRxiv}, 2019.
+  \url{https://doi.org/10.1101/573006}
+\BIBentrySTDinterwordspacing
 \BIBentrySTDinterwordspacing
 
 \bibitem{Promteangtrong2015}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
 C.~Promteangtrong, M.~Kolber, P.~Ramchandra, M.~Moghbel, S.~Houshmand,
-  M.~Schöll, H.~Bai, T.~J. Werner, A.~Alavi, i C.~Buchpiguel, ``Multimodality
-  imaging approach in alzheimer disease. part i: Structural mri, functional
-  mri, diffusion tensor imaging and magnetization transfer imaging'',
+  M.~Schöll, H.~Bai, T.~J. Werner, A.~Alavi, i C.~Buchpiguel, ``{Multimodality
+  Imaging Approach in Alzheimer disease. Part I: Structural MRI, Functional
+  MRI, Diffusion Tensor Imaging and Magnetization Transfer Imaging}'',
   \emph{Dementia and Neuropsychologia}, sv.~9, br.~4, str. 318–329, Oct 2015.
   \url{https://doi.org/10.1590/1980-57642015DN94000318}
 \BIBentrySTDinterwordspacing
@@ -111,62 +105,43 @@ C.~Promteangtrong, M.~Kolber, P.~Ramchandra, M.~Moghbel, S.~Houshmand,
 
 \bibitem{mueller2015diffusion}
 \BIBentryALTinterwordspacing
-B.~A. Mueller, K.~O. Lim, L.~Hemmy, i J.~Camchong, ``Diffusion mri and its role
-  in neuropsychology'', \emph{Neuropsychology Review}, sv.~25, br.~3, str.
-  250--271, 2015. \url{https://doi.org/10.1007/s11065-015-9291-z}
-\BIBentrySTDinterwordspacing
-
-\bibitem{adni_about}
-\BIBentryALTinterwordspacing
-A.~D.~N. Initiative, ``About adni'', 2023., accessed: 2024-05-30. [Mre\v zno].
-  Adresa: \url{https://adni.loni.usc.edu/about/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{usc_loni}
-\BIBentryALTinterwordspacing
-I.~at~USC~LONI, ``Ida imaging data archive'', accessed: 2024-05-30. [Mre\v
-  zno]. Adresa: \url{https://ida.loni.usc.edu/login.jsp/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{umich_brainviewer}
-\BIBentryALTinterwordspacing
-S.~at~University~of Michigan, ``Socr brain viewer'', 2024., accessed:
-  2024-05-20. [Mre\v zno]. Adresa:
-  \url{https://socr.umich.edu/HTML5/BrainViewer/}
+B.~A. Mueller, K.~O. Lim, L.~Hemmy, i J.~Camchong, ``{Diffusion MRI and its
+  Role in Neuropsychology}'', \emph{Neuropsychology Review}, sv.~25, br.~3,
+  str. 250--271, 2015. \url{https://doi.org/10.1007/s11065-015-9291-z}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ml_book}
 \BIBentryALTinterwordspacing
-M.~Mohri, A.~Rostamizadeh, i A.~Talwalkar, \emph{Foundations of Machine
-  Learning, second edition}, ser. Adaptive Computation and Machine Learning
+M.~Mohri, A.~Rostamizadeh, i A.~Talwalkar, \emph{{Foundations of Machine
+  Learning, second edition}}, ser. Adaptive Computation and Machine Learning
   series.\hskip 1em plus 0.5em minus 0.4em\relax MIT Press, 2018. [Mre\v zno].
   Adresa: \url{https://books.google.hr/books?id=dWB9DwAAQBAJ}
 \BIBentrySTDinterwordspacing
 
 \bibitem{somvanshi2016}
 \BIBentryALTinterwordspacing
-M.~Somvanshi, P.~Chavan, S.~Tambade, i S.~V. Shinde, \emph{A review of machine
-  learning techniques using decision tree and support vector machine}, 2016.
+M.~Somvanshi, P.~Chavan, S.~Tambade, i S.~V. Shinde, \emph{{A review of machine
+  learning techniques using decision tree and support vector machine}}, 2016.
   \url{https://doi.org/10.1109/ICCUBEA.2016.7860040}
 \BIBentrySTDinterwordspacing
 
 \bibitem{mahesh2019}
 \BIBentryALTinterwordspacing
-B.~Mahesh, ``Machine learning algorithms -a review'', 01 2019.
+B.~Mahesh, ``{Machine Learning Algorithms -A Review}'', 01 2019.
   \url{https://doi.org/10.21275/ART20203995}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ibm_machine_learning}
 \BIBentryALTinterwordspacing
-``What is machine learning (ml)?'' 2023., accessed: 2024-05-30. [Mre\v zno].
+``{What Is Machine Learning (ML)?}'' 2023., accessed: 2024-05-30. [Mre\v zno].
   Adresa: \url{https://www.ibm.com/topics/machine-learning}
 \BIBentrySTDinterwordspacing
 
 \bibitem{Charbuty_Abdulazeez_2021}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
-B.~Charbuty i A.~Abdulazeez, ``Classification based on decision tree algorithm
-  for machine learning'', \emph{Journal of Applied Science and Technology
+B.~Charbuty i A.~Abdulazeez, ``{Classification Based on Decision Tree Algorithm
+  for Machine Learning}'', \emph{Journal of Applied Science and Technology
   Trends}, sv.~2, br.~01, str. 20 -- 28, Mar. 2021.
   \url{https://doi.org/10.38094/jastt20165}
 \BIBentrySTDinterwordspacing
@@ -174,7 +149,7 @@ B.~Charbuty i A.~Abdulazeez, ``Classification based on decision tree algorithm
 
 \bibitem{Keldenich2022}
 \BIBentryALTinterwordspacing
-T.~Keldenich, ``Decision tree: How to use it and its hyperparameters'',
+T.~Keldenich, ``{Decision Tree: How to Use It and Its Hyperparameters}'',
   \emph{Inside Machine Learning}, 2022., accessed: 2024-05-31. [Mre\v zno].
   Adresa:
   \url{https://inside-machinelearning.com/en/decision-tree-and-hyperparameters/}
@@ -182,37 +157,37 @@ T.~Keldenich, ``Decision tree: How to use it and its hyperparameters'',
 
 \bibitem{singh2014}
 \BIBentryALTinterwordspacing
-S.~Singh i M.~Giri, ``Comparative study of id3, cart and c4.5 decision tree
-  algorithm: A survey'', \emph{International Journal of Advanced Information
+S.~Singh i M.~Giri, ``{Comparative Study of ID3, CART and C4.5 Decision Tree
+  Algorithm: A Survey}'', \emph{International Journal of Advanced Information
   Science and Technology}, sv.~3, br.~7, str. 47--52, 2014.
   \url{https://doi.org/10.15693/ijaist/2014.v3i7.47-52}
 \BIBentrySTDinterwordspacing
 
 \bibitem{geeksforgeeks2021}
 \BIBentryALTinterwordspacing
-{GeeksforGeeks}, ``Random forest algorithm in machine learning'', 2021. [Mre\v
-  zno]. Adresa:
+{GeeksforGeeks}, ``{Random Forest Algorithm in Machine Learning}'', 2021.
+  [Mre\v zno]. Adresa:
   \url{https://www.geeksforgeeks.org/random-forest-algorithm-in-machine-learning/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{segal2004machine}
-M.~R. Segal, ``Machine learning benchmarks and random forest regression'',
+M.~R. Segal, ``{Machine learning benchmarks and random forest regression}'',
   2004.
 
 \bibitem{sarica2017}
-A.~Sarica, A.~Cerasa, i A.~Quattrone, ``Random forest algorithm for the
-  classification of neuroimaging data in alzheimer's disease: a systematic
-  review'', \emph{Frontiers in aging neuroscience}, sv.~9, str. 329, 2017.
+A.~Sarica, A.~Cerasa, i A.~Quattrone, ``{Random forest algorithm for the
+  classification of neuroimaging data in Alzheimer's disease: a systematic
+  review}'', \emph{Frontiers in aging neuroscience}, sv.~9, str. 329, 2017.
 
 \bibitem{fletcher2009}
-T.~Fletcher, ``Support vector machines explained'', \emph{Tutorial paper}, sv.
-  1118, str. 1--19, 2009.
+T.~Fletcher, ``{Support vector machines explained}'', \emph{Tutorial paper},
+  sv. 1118, str. 1--19, 2009.
 
 \bibitem{Noble2006}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
-W.~S. Noble, ``What is a support vector machine?'' \emph{Nature Biotechnology},
-  sv.~24, br.~12, str. 1565--1567, December 2006.
+W.~S. Noble, ``{What is a support vector machine?}'' \emph{Nature
+  Biotechnology}, sv.~24, br.~12, str. 1565--1567, December 2006.
   \url{https://doi.org/10.1038/nbt1206-1565}
 \BIBentrySTDinterwordspacing
 \BIBentrySTDinterwordspacing
@@ -220,38 +195,57 @@ W.~S. Noble, ``What is a support vector machine?'' \emph{Nature Biotechnology},
 \bibitem{Gammermann2000}
 \BIBentryALTinterwordspacing
 \BIBentryALTinterwordspacing
-A.~Gammermann, ``Support vector machine learning algorithm and transduction'',
-  \emph{Computational Statistics}, sv.~15, br.~1, str. 31--39, March 2000.
-  \url{https://doi.org/10.1007/s001800050034}
+A.~Gammermann, ``{Support vector machine learning algorithm and
+  transduction}'', \emph{Computational Statistics}, sv.~15, br.~1, str. 31--39,
+  March 2000. \url{https://doi.org/10.1007/s001800050034}
 \BIBentrySTDinterwordspacing
+\BIBentrySTDinterwordspacing
+
+\bibitem{adni_about}
+\BIBentryALTinterwordspacing
+A.~D.~N. Initiative, ``{About ADNI}'', 2023., accessed: 2024-05-30. [Mre\v
+  zno]. Adresa: \url{https://adni.loni.usc.edu/about/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{usc_loni}
+\BIBentryALTinterwordspacing
+I.~at~USC~LONI, ``{IDA Imaging Data Archive}'', accessed: 2024-05-30. [Mre\v
+  zno]. Adresa: \url{https://ida.loni.usc.edu/login.jsp/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{umich_brainviewer}
+\BIBentryALTinterwordspacing
+S.~at~University~of Michigan, ``{SOCR Brain Viewer}'', 2024., accessed:
+  2024-05-20. [Mre\v zno]. Adresa:
+  \url{https://socr.umich.edu/HTML5/BrainViewer/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{medium_confusion_matrix}
 \BIBentryALTinterwordspacing
-P.~Desai, ``Confusion matrix, accuracy, precision, recall, f1 score'', 2020.,
+P.~Desai, ``{Confusion Matrix, Accuracy, Precision, Recall, F1 Score}'', 2020.,
   accessed: 2024-06-01. [Mre\v zno]. Adresa:
   \url{https://medium.com/analytics-vidhya/confusion-matrix-accuracy-precision-recall-f1-score-ade299cf63cd}
 \BIBentrySTDinterwordspacing
 
 \bibitem{towardsdatascience_confusion_matrix}
 \BIBentryALTinterwordspacing
-A.~P. Singh, ``Performance metrics: Confusion matrix, precision, recall, and f1
-  score'', 2020., accessed: 2024-06-01. [Mre\v zno]. Adresa:
+A.~P. Singh, ``{Performance Metrics: Confusion Matrix, Precision, Recall, and
+  F1 Score}'', 2020., accessed: 2024-06-01. [Mre\v zno]. Adresa:
   \url{https://towardsdatascience.com/performance-metrics-confusion-matrix-precision-recall-and-f1-score-a8fe076a2262}
 \BIBentrySTDinterwordspacing
 
 \bibitem{Mathew2023}
 \BIBentryALTinterwordspacing
 J.~Mathew, R.~Kshirsagar, D.~Abidin, J.~Griffin, S.~Kanarachos, J.~James,
-  M.~Alamaniotis, i M.~Fitzpatrick, ``A comparison of machine learning methods
+  M.~Alamaniotis, i M.~Fitzpatrick, ``{A comparison of machine learning methods
   to classify radioactive elements using prompt-gamma-ray neutron activation
-  data'', 01 2023. \url{https://doi.org/10.21203/rs.3.rs-2518432/v1}
+  data}'', 01 2023. \url{https://doi.org/10.21203/rs.3.rs-2518432/v1}
 \BIBentrySTDinterwordspacing
 
 \bibitem{MultimodalRF}
 \BIBentryALTinterwordspacing
-T.~A, U.~A. C, A.~John, i R.~Saju, ``Multimodal mri based classification and
-  prediction of alzheimer's disease using random forest ensemble'', u
+T.~A, U.~A. C, A.~John, i R.~Saju, ``{Multimodal MRI Based Classification and
+  Prediction of Alzheimer's Disease Using Random Forest Ensemble}'', u
   \emph{Proceedings of the IEEE International Conference on Advanced Networks
   and Telecommunications Systems (ANTS)}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2020., str. 252--253.
@@ -260,8 +254,8 @@ T.~A, U.~A. C, A.~John, i R.~Saju, ``Multimodal mri based classification and
 
 \bibitem{IRJET}
 \BIBentryALTinterwordspacing
-S.~Mahajan, G.~Bangar, i N.~Kulkarni, ``Machine learning algorithms for
-  classification of various stages of alzheimer's disease: A review'',
+S.~Mahajan, G.~Bangar, i N.~Kulkarni, ``{Machine Learning Algorithms for
+  Classification of Various Stages of Alzheimer's Disease: A Review}'',
   \emph{International Research Journal of Engineering and Technology (IRJET)},
   sv.~7, br.~6, str. 4650--4653, 2020., accessed: 2024-05-29. [Mre\v zno].
   Adresa: \url{https://www.irjet.net/archives/V7/i6/IRJET-V7I6714.pdf}
@@ -269,8 +263,8 @@ S.~Mahajan, G.~Bangar, i N.~Kulkarni, ``Machine learning algorithms for
 
 \bibitem{AnalysisPerformance}
 \BIBentryALTinterwordspacing
-H.~P. i P.~K., ``Analysis and performance of machine learning techniques in
-  detection and classification of alzheimer’s disease'', \emph{Journal of
+H.~P. i P.~K., ``{Analysis and Performance of Machine Learning Techniques in
+  Detection and Classification of Alzheimer’s Disease}'', \emph{Journal of
   Medical Imaging and Health Informatics}, sv.~11, br.~4, str. 902--909, 2021.
   \url{https://doi.org/10.1166/jmihi.2021.3370}
 \BIBentrySTDinterwordspacing
@@ -278,8 +272,8 @@ H.~P. i P.~K., ``Analysis and performance of machine learning techniques in
 \bibitem{asi}
 \BIBentryALTinterwordspacing
 S.~Salunkhe, M.~Bachute, S.~Gite, N.~Vyas, S.~Khanna, K.~Modi, C.~Katpatal, i
-  K.~Kotecha, ``Classification of alzheimer’s disease patients using texture
-  analysis and machine learning'', \emph{Applied System Innovations}, sv.~4,
+  K.~Kotecha, ``{Classification of Alzheimer’s Disease Patients Using Texture
+  Analysis and Machine Learning}'', \emph{Applied System Innovations}, sv.~4,
   br.~49, 2021. \url{https://doi.org/10.3390/asi4030049}
 \BIBentrySTDinterwordspacing
 

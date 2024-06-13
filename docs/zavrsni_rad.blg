@@ -10,54 +10,54 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 150 items from 100.
 Database file #1: literatura.bib
-You're missing a field name---line 195 of file literatura.bib
- :  doi = {10.1101/573006},
- :                         ,
+I was expecting a `,' or a `}'---line 47 of file literatura.bib
+ :  doi 
+ :      = {10.1212/WNL.0b013e3181c3f293},
 I'm skipping whatever remains of this entry
-Warning--empty journal in Schaper573006
+Warning--I didn't find a database entry for "doi:10.1212/WNL.0b013e3181c3f293"
 Warning--missing publisher in somvanshi2016
 Warning--empty journal in mahesh2019
 Warning--empty journal in segal2004machine
 Warning--empty journal in Mathew2023
-You've used 34 entries,
+You've used 33 entries,
             4225 wiz_defined-function locations,
-            1073 strings with 15118 characters,
-and the built_in function-call counts, 22696 in all, are:
-= -- 1923
-> -- 471
-< -- 134
-+ -- 254
-- -- 91
-* -- 1048
-:= -- 3737
-add.period$ -- 101
-call.type$ -- 34
-change.case$ -- 41
-chr.to.int$ -- 267
-cite$ -- 39
-duplicate$ -- 1636
-empty$ -- 1788
-format.name$ -- 108
-if$ -- 5311
+            1067 strings with 15007 characters,
+and the built_in function-call counts, 21626 in all, are:
+= -- 1836
+> -- 441
+< -- 122
++ -- 236
+- -- 86
+* -- 993
+:= -- 3585
+add.period$ -- 98
+call.type$ -- 33
+change.case$ -- 40
+chr.to.int$ -- 240
+cite$ -- 37
+duplicate$ -- 1568
+empty$ -- 1718
+format.name$ -- 102
+if$ -- 5058
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 302
-newline$ -- 203
-num.names$ -- 33
-pop$ -- 676
+int.to.str$ -- 33
+missing$ -- 290
+newline$ -- 198
+num.names$ -- 32
+pop$ -- 651
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1819
+skip$ -- 1736
 stack$ -- 0
-substring$ -- 725
-swap$ -- 1281
-text.length$ -- 45
+substring$ -- 661
+swap$ -- 1215
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 34
-warning$ -- 5
-while$ -- 77
-width$ -- 36
-write$ -- 442
+type$ -- 33
+warning$ -- 4
+while$ -- 73
+width$ -- 35
+write$ -- 429
 (There was 1 error message)
